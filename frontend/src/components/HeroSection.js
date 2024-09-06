@@ -24,13 +24,13 @@ const cards = [
     url: "https://www.amazon.com/dp/B0CNBD75R1",
     target: "_blank",
   },
-  {
-    id: "4",
-    title: "Web Principal",
-    description: "Entrar",
-    url: "/inicio",
-    target: "_self",
-  },
+  // {
+  //   id: "4",
+  //   title: "Web Principal",
+  //   description: "Entrar",
+  //   url: "/inicio",
+  //   target: "_self",
+  // },
 ];
 
 export default function HeroSection() {
@@ -38,7 +38,7 @@ export default function HeroSection() {
     <section className="flex min-h-screen flex-col items-center justify-between px-8 py-24 md:p-24">
       <LogoCaidaAscenso className="relative fill-scarlet w-[350px] h-[172px] md:w-[500px] md:h-[246px] md:mt-8 lg:w-[700px] lg:h-[344px] 2xl:w-[850px] 2xl:h-[418px] 2xl:mt-16" />
 
-      <div className="mb-4 mt-24 grid text-center gap-4 lg:max-w-7xl lg:w-full lg:mb-0 lg:mt-0 lg:grid-cols-4">
+      <div className="mb-4 mt-24 grid text-center gap-4 lg:max-w-7xl lg:w-full lg:mb-0 lg:mt-0 lg:grid-cols-3">
         {cards.map((card) => (
           <Link
             key={card.id}
