@@ -38,7 +38,7 @@ export default function HeroSection() {
     <section className="flex min-h-screen flex-col items-center justify-between px-8 pt-24 pb-8 md:px-24 md:pt-24 md:pb-8">
       <LogoCaidaAscenso className="relative fill-scarlet w-[350px] h-[172px] md:w-[500px] md:h-[246px] md:mt-8 lg:w-[700px] lg:h-[344px] 2xl:w-[850px] 2xl:h-[418px] 2xl:mt-16" />
 
-      <div className="mb-8 mt-20 grid text-center gap-4 lg:max-w-7xl lg:w-full lg:mt-8 lg:grid-cols-3">
+      <div className="mb-12 mt-20 grid text-center gap-4 lg:max-w-7xl lg:w-full lg:mt-8 lg:grid-cols-3">
         {cards.map((card) => (
           <Link
             key={card.id}
@@ -60,9 +60,9 @@ export default function HeroSection() {
       <Link
         href="https://alemartir.com"
         target="_blank"
-        className="text-xs text-grey hover:underline"
+        className="text-xs text-grey uppercase hover:underline"
       >
-        CLAUDETTE &copy; 2024 AM
+        Claudette Vamp &copy; 2024 AM
       </Link>
     </section>
   );
