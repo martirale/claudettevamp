@@ -8,18 +8,21 @@ const cards = [
     title: "Reencarnación",
     description: "Parte I",
     url: "https://www.amazon.com/dp/B0BNZLP26R",
+    target: "_blank",
   },
   {
-    id: "1",
+    id: "2",
     title: "Descenso",
     description: "Parte II",
     url: "https://www.amazon.com/dp/B0CJ4M7R6G",
+    target: "_blank",
   },
   {
-    id: "1",
+    id: "3",
     title: "Reina y Princesa",
     description: "Parte III",
     url: "https://www.amazon.com/dp/B0CNBD75R1",
+    target: "_blank",
   },
 ];
 
@@ -33,7 +36,7 @@ export default function HeroSection() {
           <Link
             key={card.id}
             href={card.url}
-            target="_blank"
+            target={card.target}
             rel="noopener"
             className="rounded-2xl border border-black px-12 py-5 transition-colors hover:border-scarlet md:px-8"
           >
