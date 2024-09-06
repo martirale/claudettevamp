@@ -11,9 +11,9 @@ h1 {
 body.gradient-background {
   background: linear-gradient(145deg, #121212, #2b1010);
   background-size: 400% 400%;
-
   -webkit-animation: RedVelvetAnimation 8s ease infinite;
   animation: RedVelvetAnimation 8s ease infinite;
+  min-height: 100vh;
 }
 
 body.gradient-background::before {
