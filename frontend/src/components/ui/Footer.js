@@ -10,7 +10,7 @@ export default function Footer() {
   if (isHomePage) return null;
 
   return (
-    <footer>
+    <footer className="lg:px-16 2xl:px-0">
       <Link
         href="https://alemartir.com"
         target="_blank"

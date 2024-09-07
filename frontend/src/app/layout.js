@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="es" className="dark">
       <body className="text-white gradient-background w-full max-w-xl md:max-w-3xl lg:max-w-screen-2xl mx-auto px-4">
         <Header />
-        <main>{children}</main>
+        <main className="lg:px-16 2xl:px-0">{children}</main>
         <Footer />
       </body>
     </html>
