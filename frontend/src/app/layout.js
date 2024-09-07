@@ -1,5 +1,7 @@
 import "./globals.css";
 import { getMetadata } from "@/lib/getMetadata";
+import Header from "@/components/ui/Header";
+import Footer from "@/components/ui/Footer";
 
 export const metadata = getMetadata({
   title: "Claudette Vamp",
@@ -14,7 +16,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className="dark">
       <body className="text-white gradient-background w-full max-w-xl md:max-w-3xl lg:max-w-screen-2xl mx-auto px-4">
+        <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
