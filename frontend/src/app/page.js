@@ -1,6 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 
-export default function Home() {
+export default function Welcome() {
   return (
     <div>
       <h1>Claudette Vamp</h1>
