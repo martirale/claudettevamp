@@ -107,7 +107,7 @@ const Header = () => {
   if (isHomePage) return null;
 
   return (
-    <header className="fixed top-0 left-0 w-full gradient-header border-b-scarlet border-b-[1px] z-50">
+    <header className="top-0 left-0 w-full gradient-header border-b-scarlet border-b-[1px] z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 md:h-24">
           {isMobile ? renderMobileMenu() : renderDesktopMenu()}
