@@ -15,12 +15,10 @@ export const metadata = getMetadata({
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className="dark">
-      <body className="gradient-background">
-        <div className="text-white w-full max-w-xl md:max-w-3xl lg:max-w-screen-2xl mx-auto px-4">
-          <Header />
-          <main className="lg:px-16 2xl:px-0">{children}</main>
-          <Footer />
-        </div>
+      <body className="gradient-background text-white">
+        <Header />
+        <main className="lg:px-16 2xl:px-0">{children}</main>
+        <Footer />
       </body>
     </html>
   );
