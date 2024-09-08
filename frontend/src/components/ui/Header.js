@@ -45,7 +45,9 @@ const Header = () => {
           ))}
         </div>
         <div className="flex-shrink-0 mx-16">
-          <MonogramClaudette className="fill-scarlet w-[51px] h-[72px]" />
+          <Link href="/inicio">
+            <MonogramClaudette className="fill-scarlet w-[51px] h-[72px]" />
+          </Link>
         </div>
         <div className="flex-1 flex justify-start space-x-16">
           {menuItems.slice(midPoint).map((item, index) => (
@@ -65,7 +67,9 @@ const Header = () => {
   const renderMobileMenu = () => (
     <>
       <div className="flex-shrink-0">
-        <MonogramClaudette className="fill-scarlet w-[46px] h-[64px]" />
+        <Link href="/inicio">
+          <MonogramClaudette className="fill-scarlet w-[46px] h-[64px]" />
+        </Link>
       </div>
       <button onClick={toggleMenu} className="text-white p-2">
         <svg
