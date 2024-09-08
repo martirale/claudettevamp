@@ -15,10 +15,10 @@ body.gradient-background {
   animation: RedVelvetAnimation 8s ease infinite;
   min-height: 100vh;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
-body.gradient-background::before {
+/* body.gradient-background::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -32,7 +32,7 @@ body.gradient-background::before {
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: -1;
-}
+} */
 
 @-webkit-keyframes RedVelvetAnimation {
   0% {
