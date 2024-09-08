@@ -10,10 +10,10 @@ module.exports = {
     colors: {
       scarlet: "#c1272d",
       blood: "#1c0000",
-      darkblack: "#020202",
+      darkBlack: "#020202",
       black: "#1a1a1a",
       white: "#f5f5f5",
-      darkgrey: "#424242",
+      darkGrey: "#424242",
       grey: "#616161",
     },
     extend: {
