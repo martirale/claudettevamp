@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
+import MonogramClaudette from "../MonogramClaudette";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,12 +45,7 @@ const Header = () => {
           ))}
         </div>
         <div className="flex-shrink-0 mx-16">
-          <Image
-            src="/favicon.png"
-            alt="Claudette Vamp"
-            width={72}
-            height={72}
-          />
+          <MonogramClaudette className="fill-scarlet w-[51px] h-[72px]" />
         </div>
         <div className="flex-1 flex justify-start space-x-16">
           {menuItems.slice(midPoint).map((item, index) => (
@@ -70,7 +65,7 @@ const Header = () => {
   const renderMobileMenu = () => (
     <>
       <div className="flex-shrink-0">
-        <Image src="/favicon.png" alt="Claudette Vamp" width={64} height={64} />
+        <MonogramClaudette className="fill-scarlet w-[46px] h-[64px]" />
       </div>
       <button onClick={toggleMenu} className="text-white p-2">
         <svg

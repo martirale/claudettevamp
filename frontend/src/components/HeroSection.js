@@ -35,7 +35,7 @@ const cards = [
 export default function HeroSection() {
   return (
     <section className="flex min-h-screen flex-col items-center justify-between pt-24 pb-8 md:pt-24 md:pb-8">
-      <LogoCaidaAscenso className="relative fill-scarlet w-[350px] h-[172px] md:w-[500px] md:h-[246px] md:mt-8 lg:w-[700px] lg:h-[344px] 2xl:w-[850px] 2xl:h-[418px] 2xl:mt-16" />
+      <LogoCaidaAscenso className="fill-scarlet w-[350px] h-[172px] md:w-[500px] md:h-[246px] md:mt-8 lg:w-[700px] lg:h-[344px] 2xl:w-[850px] 2xl:h-[418px] 2xl:mt-16" />
 
       <div className="mb-12 mt-20 grid text-center gap-4 lg:max-w-7xl lg:w-full lg:mt-8 lg:mb-5 lg:grid-cols-3">
         {cards.map((card) => (
