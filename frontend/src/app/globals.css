@@ -59,7 +59,7 @@ body.gradient-background::before {
 /* GRAIN TEXTURE */
 .grain-texture::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
