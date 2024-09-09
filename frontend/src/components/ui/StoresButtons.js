@@ -4,20 +4,26 @@ import Image from "next/image";
 const stores = [
   {
     id: "1",
-    image: "/favicon.png",
-    url: "https://www.amazon.com/dp/B0BNZLP26R",
+    image: "/stores/amazon-com.svg",
+    width: "150",
+    height: "44",
+    url: "https://www.amazon.com/dp/B0BNZMWXYT",
     target: "_blank",
   },
   {
     id: "2",
-    image: "/favicon.png",
-    url: "https://www.amazon.com/dp/B0CJ4M7R6G",
+    image: "/stores/apple-books.svg",
+    width: "150",
+    height: "44",
+    url: "https://books.apple.com/us/book-series/caída-y-ascenso/id1701697487",
     target: "_blank",
   },
   {
     id: "3",
-    image: "/favicon.png",
-    url: "https://www.amazon.com/dp/B0CNBD75R1",
+    image: "/stores/goodreads.svg",
+    width: "150",
+    height: "44",
+    url: "https://www.goodreads.com/series/378386-ca-da-y-ascenso",
     target: "_blank",
   },
 ];
@@ -31,9 +37,9 @@ export default function StoresButtons() {
           href={store.url}
           target={store.target}
           rel="noopener"
-          className="border border-black px-8 py-5 transition-colors hover:border-scarlet"
+          className="px-2 py-4 border border-black transition-colors hover:border-scarlet flex items-center justify-center"
         >
-          <Image src={store.image} width={64} height={64} />
+          <Image src={store.image} width={store.width} height={store.height} />
         </Link>
       ))}
     </div>
