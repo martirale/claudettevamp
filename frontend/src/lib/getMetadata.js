@@ -10,8 +10,8 @@ export function getMetadata({ title, description, url, image, canonical }) {
       images: [
         {
           url: image,
-          width: 1200,
-          height: 630,
+          width: 1920,
+          height: 1080,
           alt: title,
         },
       ],
