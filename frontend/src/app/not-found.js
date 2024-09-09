@@ -12,7 +12,8 @@ export default function NotFound() {
       <h1>404 Not Found</h1>
 
       <h2 className="font-LeMurmure text-7xl mb-2 md:text-9xl">
-        404 <br aria-hidden="true" className="block md:hidden" />
+        <span className="text-scarlet">404</span>{" "}
+        <br aria-hidden="true" className="block md:hidden" />
         Not Found
       </h2>
       <p className="text-xl mb-12">
