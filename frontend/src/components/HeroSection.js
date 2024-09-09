@@ -59,9 +59,9 @@ export default function HeroSection() {
       <Link
         href="https://alemartir.com"
         target="_blank"
-        className="text-xs text-grey uppercase hover:underline"
+        className="text-sm text-grey uppercase hover:underline"
       >
-        Claudette Vamp &copy; 2024 AM
+        Claudette Vamp &copy; {new Date().getFullYear()} AM
       </Link>
     </section>
   );
