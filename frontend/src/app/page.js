@@ -1,11 +1,11 @@
-import HeroSection from "@/components/HeroSection";
+import HeroWelcome from "@/components/hero/HeroWelcome";
 
 export default function Welcome() {
   return (
     <div>
       <h1>Claudette Vamp</h1>
 
-      <HeroSection />
+      <HeroWelcome />
     </div>
   );
 }

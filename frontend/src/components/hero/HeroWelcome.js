@@ -1,25 +1,27 @@
 import Link from "next/link";
-import LogoCaidaAscenso from "./LogoCaidaAscenso";
+import LogoCaidaAscenso from "../LogoCaidaAscenso";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const cards = [
   {
     id: "1",
     title: "Reencarnación",
-    description: "(Parte I)",
+    description: "Libro I",
     url: "https://www.amazon.com/dp/B0BNZLP26R",
     target: "_blank",
   },
   {
     id: "2",
     title: "Descenso",
-    description: "(Parte II)",
+    description: "Libro II",
     url: "https://www.amazon.com/dp/B0CJ4M7R6G",
     target: "_blank",
   },
   {
     id: "3",
     title: "Reina y Princesa",
-    description: "(Parte III)",
+    description: "Libro III",
     url: "https://www.amazon.com/dp/B0CNBD75R1",
     target: "_blank",
   },
@@ -32,7 +34,7 @@ const cards = [
   },
 ];
 
-export default function HeroSection() {
+export default function WelcomeSection() {
   return (
     <section className="flex min-h-screen flex-col items-center justify-between -mt-24 md:-mt-32 pt-24 pb-8 md:pt-24 md:pb-8">
       <LogoCaidaAscenso className="fill-scarlet w-[350px] h-[172px] md:w-[500px] md:h-[246px] md:mt-8 lg:w-[700px] lg:h-[344px] 2xl:w-[850px] 2xl:h-[418px] 2xl:mt-16" />
@@ -51,6 +53,9 @@ export default function HeroSection() {
             </h3>
             <p className="text-grey text-sm uppercase font-bold">
               {card.description}
+              {card.id === "4" && (
+                <FontAwesomeIcon icon={faArrowRight} className="ml-2 w-4 h-4" />
+              )}
             </p>
           </Link>
         ))}
