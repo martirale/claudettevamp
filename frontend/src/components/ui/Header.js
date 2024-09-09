@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import LogoClaudette from "../LogoClaudette";
+import MonogramClaudette from "../MonogramClaudette";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,7 +46,7 @@ const Header = () => {
         </div>
         <div className="flex-shrink-0 mx-16">
           <Link href="/inicio">
-            <LogoClaudette className="fill-scarlet w-[194px] h-[72px]" />
+            <MonogramClaudette className="fill-scarlet w-[51px] h-[72px]" />
           </Link>
         </div>
         <div className="font-LeMurmure text-2xl flex-1 flex justify-start space-x-16">
@@ -68,7 +68,7 @@ const Header = () => {
     <>
       <div className="flex-shrink-0">
         <Link href="/inicio">
-          <LogoClaudette className="fill-scarlet w-[146px] h-[54px]" />
+          <MonogramClaudette className="fill-scarlet w-[38px] h-[54px]" />
         </Link>
       </div>
       <button onClick={toggleMenu} className="text-white p-2">
