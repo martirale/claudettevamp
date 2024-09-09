@@ -2,7 +2,7 @@ import { Barlow_Condensed } from "next/font/google";
 import localFont from "next/font/local";
 
 const BarlowCond = Barlow_Condensed({
-  weight: ["300", "600"],
+  weight: ["300", "500"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
