@@ -1,4 +1,6 @@
 import { getMetadata } from "@/lib/getMetadata";
+import { faSkull } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const metadata = getMetadata({
   title: "404 Not Found — Claudette Vamp",
@@ -17,7 +19,8 @@ export default function NotFound() {
         Not Found
       </h2>
       <p className="text-xl mb-12">
-        Lo sentimos, la página que buscas no existe
+        Lo sentimos, la página que buscas no existe{" "}
+        <FontAwesomeIcon icon={faSkull} className="w-5 h-5 align-baseline" />
       </p>
     </div>
   );
