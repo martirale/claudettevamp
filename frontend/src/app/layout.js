@@ -1,7 +1,15 @@
+import { Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import { getMetadata } from "@/lib/getMetadata";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
+
+const barlow = Barlow_Condensed({
+  weight: ["300", "600"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = getMetadata({
   title: "Claudette Vamp",
@@ -14,7 +22,7 @@ export const metadata = getMetadata({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className="dark">
+    <html lang="es" className={`${barlow.className} dark`}>
       <body className="bg-darkBlack grain-texture">
         <div className="text-white w-full max-w-xl md:max-w-3xl lg:max-w-screen-2xl mx-auto px-4">
           <Header />
