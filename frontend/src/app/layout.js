@@ -1,15 +1,8 @@
-import { Barlow_Condensed } from "next/font/google";
 import "./globals.css";
+import { BarlowCond, LeMurmure } from "@/components/ui/CustomFonts";
 import { getMetadata } from "@/lib/getMetadata";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
-
-const barlow = Barlow_Condensed({
-  weight: ["300", "600"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata = getMetadata({
   title: "Claudette Vamp",
@@ -22,9 +15,12 @@ export const metadata = getMetadata({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={`${barlow.className} dark`}>
+    <html
+      lang="es"
+      className={`${BarlowCond.variable} ${LeMurmure.variable} dark`}
+    >
       <body className="bg-darkBlack grain-texture">
-        <div className="text-white w-full max-w-xl md:max-w-3xl lg:max-w-screen-2xl mx-auto px-4">
+        <div className="font-BarlowCond text-white w-full max-w-xl md:max-w-3xl lg:max-w-screen-2xl mx-auto px-4">
           <Header />
           <main className="lg:px-16 2xl:px-0">{children}</main>
           <Footer />

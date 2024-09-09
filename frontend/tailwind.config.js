@@ -16,6 +16,10 @@ module.exports = {
       darkGrey: "#424242",
       grey: "#616161",
     },
+    fontFamily: {
+      BarlowCond: ["var(--font-barlowcond)"],
+      LeMurmure: ["var(--font-lemurmure)"],
+    },
     extend: {
       fontSize: {
         base: "18px",
