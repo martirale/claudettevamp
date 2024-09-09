@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="flex items-center justify-center">
           <div className="flex-grow h-px bg-scarlet"></div>
           <div className="flex-shrink-0">
-            <MonogramClaudette className="fill-scarlet w-[116px] h-[164px] md:w-[139px] md:h-[196px]" />
+            <MonogramClaudette className="fill-scarlet w-[91px] h-[128px] md:w-[116px] md:h-[164px]" />
           </div>
           <div className="flex-grow h-px bg-scarlet"></div>
         </div>
