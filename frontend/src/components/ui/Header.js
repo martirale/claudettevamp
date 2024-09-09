@@ -22,8 +22,8 @@ const Header = () => {
 
   const menuItems = [
     { name: "Inicio", href: "/inicio" },
-    { name: "Claudette", href: "/universo" },
-    { name: "Novela", href: "/claudette" },
+    { name: "Universo", href: "/universo" },
+    { name: "Novela", href: "/novela" },
     { name: "Relatos", href: "/relatos" },
   ];
 
