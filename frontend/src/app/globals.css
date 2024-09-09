@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* GLOBALS */
+svg {
+  display: inline;
+  vertical-align: middle;
+}
+
 /* COMMONS */
 h1 {
   display: none;
