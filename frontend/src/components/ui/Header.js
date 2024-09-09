@@ -33,7 +33,7 @@ const Header = () => {
     const midPoint = Math.ceil(menuItems.length / 2);
     return (
       <>
-        <div className="flex-1 flex justify-end space-x-16">
+        <div className="font-LeMurmure text-2xl flex-1 flex justify-end space-x-16">
           {menuItems.slice(0, midPoint).map((item, index) => (
             <Link
               key={index}
@@ -49,7 +49,7 @@ const Header = () => {
             <MonogramClaudette className="fill-scarlet w-[51px] h-[72px]" />
           </Link>
         </div>
-        <div className="flex-1 flex justify-start space-x-16">
+        <div className="font-LeMurmure text-2xl flex-1 flex justify-start space-x-16">
           {menuItems.slice(midPoint).map((item, index) => (
             <Link
               key={index}
@@ -68,7 +68,7 @@ const Header = () => {
     <>
       <div className="flex-shrink-0">
         <Link href="/inicio">
-          <MonogramClaudette className="fill-scarlet w-[46px] h-[64px]" />
+          <MonogramClaudette className="fill-scarlet w-[39px] h-[54px]" />
         </Link>
       </div>
       <button onClick={toggleMenu} className="text-white p-2">
@@ -93,7 +93,7 @@ const Header = () => {
             <Link
               key={index}
               href={item.href}
-              className="block py-5 px-4 text-white"
+              className="font-LeMurmure text-2xl block p-4 text-white"
             >
               {item.name}
             </Link>
