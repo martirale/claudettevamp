@@ -46,7 +46,7 @@ export default function HeroSection() {
             rel="noopener"
             className="rounded-2xl border border-black px-12 py-5 transition-colors hover:border-scarlet md:px-8"
           >
-            <h3 className="font-LeMurmure text-scarlet mb-3 text-2xl font-semibold">
+            <h3 className="font-LeMurmure text-scarlet mb-3 text-3xl">
               {card.title}
             </h3>
             <p className="text-grey text-sm uppercase font-bold">
