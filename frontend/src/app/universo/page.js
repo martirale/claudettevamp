@@ -21,12 +21,10 @@ export default function Home() {
             Universo literario
           </h2>
 
-          <p className="mb-8 text-xl">
-            <b>
-              Claudette Vamp es un universo literario de fantasía oscura y
-              romance ambientado en el mundo real y contemporáneo (aunque oculto
-              de este) escrito por Alejandro Mártir.
-            </b>
+          <p className="mb-8 font-medium text-xl">
+            Claudette Vamp es un universo literario de fantasía oscura y romance
+            ambientado en el mundo real y contemporáneo (aunque oculto de este)
+            escrito por Alejandro Mártir.
           </p>
 
           <p className="mb-8">
@@ -47,18 +45,21 @@ export default function Home() {
           </p>
 
           <p className="mb-8">
-            En este universo además de existir seres humanos (conocidos como
-            mortales), también existen otro tipo de criaturas oscuras o seres
-            sobrenaturales como: vampiros, licántropos, brujos y Nephilim. Estas
-            criaturas están basadas en una combinación de creencias mitológicas
-            originadas en el judeocristianismo así como diversos mitos
-            folklóricos principalmente del este europeo.
+            En este universo además de existir seres humanos (conocidos como{" "}
+            <span className="italic">mortales</span>), también existen otro tipo
+            de criaturas oscuras o seres sobrenaturales como: vampiros,
+            licántropos, brujos y Nephilim. Estas criaturas están basadas en una
+            combinación de creencias mitológicas originadas en el
+            judeocristianismo así como diversos mitos folklóricos principalmente
+            del este europeo.
           </p>
 
           <p>
             Claudette Vamp actualmente está conformado por una{" "}
-            <b>novela principal</b> (compuesta por tres novelas cortas) llamada{" "}
-            <b>Caída y Ascenso.</b> Las dos primeras partes se encuentran ya{" "}
+            <span className="font-medium">novela principal</span> (compuesta por
+            tres novelas cortas) llamada{" "}
+            <span className="font-medium">Caída y Ascenso.</span> Las dos
+            primeras partes se encuentran ya{" "}
             <Link
               href="https://www.amazon.com/dp/B0BNZMWXYT"
               target="_blank"
@@ -66,7 +67,7 @@ export default function Home() {
               className="text-scarlet hover:underline"
             >
               disponibles en Amazon
-            </Link>{" "}
+            </Link>
             , mientras que la tercera parte está programada para publicarse a
             finales de octubre 2024. Así mismo, Claudette Vamp está también
             conformado por una{" "}
