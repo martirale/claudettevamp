@@ -20,9 +20,9 @@ export default function RootLayout({ children }) {
       className={`${BarlowCond.variable} ${LeMurmure.variable} dark`}
     >
       <body className="bg-darkBlack grain-texture">
-        <div className="font-BarlowCond text-white w-full max-w-xl md:max-w-3xl lg:max-w-screen-2xl mx-auto px-4">
+        <div className="font-BarlowCond text-base text-white w-full max-w-xl md:max-w-3xl lg:max-w-screen-2xl mx-auto px-4">
           <Header />
-          <main className="lg:px-16 2xl:px-0">{children}</main>
+          <main className="mt-24 md:mt-32 lg:px-16 2xl:px-0">{children}</main>
           <Footer />
         </div>
       </body>

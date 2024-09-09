@@ -22,7 +22,17 @@ module.exports = {
     },
     extend: {
       fontSize: {
-        base: "18px",
+        xs: ["13px", { lineHeight: "18px" }],
+        sm: ["17px", { lineHeight: "22px" }],
+        base: ["21px", { lineHeight: "28px" }],
+        lg: ["25px", { lineHeight: "32px" }],
+        xl: ["30px", { lineHeight: "36px" }],
+        "2xl": ["36px", { lineHeight: "1.2" }],
+        "3xl": ["48px", { lineHeight: "1.2" }],
+        "4xl": ["60px", { lineHeight: "1.2" }],
+        "5xl": ["72px", { lineHeight: "1.2" }],
+        "6xl": ["96px", { lineHeight: "1.2" }],
+        "7xl": ["128px", { lineHeight: "1.2" }],
       },
     },
   },
