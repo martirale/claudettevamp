@@ -1,4 +1,5 @@
 import HeroBooks from "@/components/hero/HeroBooks";
+import DividerLogo from "@/components/ui/DividerLogo";
 import { getMetadata } from "@/lib/getMetadata";
 
 export const metadata = getMetadata({
@@ -15,7 +16,12 @@ export default function Home() {
     <div>
       <h1>Claudette Vamp</h1>
 
+      {/* HERO BOOKS */}
       <HeroBooks />
+      <DividerLogo className="py-16" />
+
+      {/* UNIVERSE SLIDESHOW */}
+      <DividerLogo className="py-16" />
     </div>
   );
 }
