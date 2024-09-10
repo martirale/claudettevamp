@@ -1,4 +1,5 @@
 import BoxCard from "@/components/ui/BoxCard";
+import DividerLogo from "@/components/ui/DividerLogo";
 import { getMetadata } from "@/lib/getMetadata";
 import Link from "next/link";
 
@@ -86,8 +87,12 @@ export default function Home() {
 
         {/* SIDEBAR */}
         <div className="col-span-12 md:col-span-4">
-          <BoxCard className="mt-16 md:mt-5">
-            <h2>Lorem Ipsum</h2>
+          <BoxCard className="mt-16 md:mt-5 text-center">
+            <h2 className="font-LeMurmure text-scarlet text-3xl">
+              Lorem Ipsum
+            </h2>
+            <DividerLogo className="py-4" />
+            <p>Lorem ipsum dolor sit amet.</p>
           </BoxCard>
         </div>
       </section>
