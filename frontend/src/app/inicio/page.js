@@ -1,5 +1,5 @@
-import BookSlideshow from "@/components/BookSlideshow";
 import { getMetadata } from "@/lib/getMetadata";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -20,7 +20,12 @@ export default function Home() {
 
       <section className="grid grid-cols-1 md:grid-cols-12 gap-8">
         <div className="col-span-12 md:col-span-6">
-          <BookSlideshow />
+          <Image
+            src="/books/claudette-caida-ascenso.png"
+            width="688"
+            height="600"
+            className="w-full h-auto"
+          />
         </div>
       </section>
     </div>
