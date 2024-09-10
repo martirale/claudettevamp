@@ -131,7 +131,7 @@ export default function Home() {
 
             <DividerLogo className="py-4" />
 
-            <h3 className="font-LeMurmure text-scarlet text-xl uppercase mb-3">
+            <h3 className="font-LeMurmure text-scarlet text-xl mb-3">
               Caída y ascenso
             </h3>
             <ul>
@@ -151,7 +151,7 @@ export default function Home() {
 
             <DividerLogo className="py-4" />
 
-            <h3 className="font-LeMurmure text-scarlet text-xl uppercase mb-3">
+            <h3 className="font-LeMurmure text-scarlet text-xl mb-3">
               Claudette Vamp: Relatos
             </h3>
             <ul>
