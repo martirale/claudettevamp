@@ -13,6 +13,44 @@ h1 {
   display: none;
 }
 
+/* BOOK SLIDESHOW */
+.swiper-container {
+  overflow: visible !important;
+}
+
+.swiper-wrapper {
+  align-items: center;
+}
+
+.swiper-slide {
+  transition: all 0.7s ease;
+  transform: scale(0.8);
+}
+
+.swiper-slide-active {
+  z-index: 2;
+  opacity: 1;
+  transform: translateX(-29%) scale(1);
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+  z-index: 1;
+}
+
+.swiper-slide-prev {
+  transform: translateX(18%) scale(0.8);
+}
+
+.swiper-slide-next {
+  transform: translateX(250%) scale(0.8);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+}
+
 /* GRADIENT BACKGROUND */
 body.gradient-background {
   background: linear-gradient(145deg, #1c0000, #060809);
