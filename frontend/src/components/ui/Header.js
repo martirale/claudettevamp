@@ -68,7 +68,7 @@ const Header = () => {
     <>
       <div className="flex-shrink-0">
         <Link href="/inicio">
-          <MonogramClaudette className="fill-scarlet w-[38px] h-[54px]" />
+          <MonogramClaudette className="fill-scarlet w-[45px] h-[64px]" />
         </Link>
       </div>
       <button onClick={toggleMenu} className="text-white p-2">
