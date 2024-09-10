@@ -87,11 +87,13 @@ export default function Home() {
 
         {/* SIDEBAR */}
         <div className="col-span-12 md:col-span-4">
-          <BoxCard className="mt-16 md:mt-5 text-center">
-            <h2 className="font-LeMurmure text-scarlet text-3xl">
+          <BoxCard className="mt-16 md:mt-5">
+            <h3 className="font-LeMurmure text-scarlet text-3xl">
               Lorem Ipsum
-            </h2>
+            </h3>
+
             <DividerLogo className="py-4" />
+
             <p>Lorem ipsum dolor sit amet.</p>
           </BoxCard>
         </div>
