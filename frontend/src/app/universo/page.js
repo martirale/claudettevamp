@@ -19,7 +19,7 @@ export default function Home() {
 
       <section className="grid grid-cols-1 md:grid-cols-12 gap-4">
         <div className="col-span-12 md:col-span-8">
-          <h2 className="font-LeMurmure text-scarlet text-5xl md:text-7xl mb-16">
+          <h2 className="font-LeMurmure text-scarlet text-6xl md:text-7xl mb-16">
             Universo literario
           </h2>
 
