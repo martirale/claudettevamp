@@ -10,7 +10,9 @@ export default function HeroBooks() {
           src="/books/claudette-caida-ascenso.png"
           width="688"
           height="600"
+          quality={100}
           className="w-full h-auto"
+          alt="Claudette, caída y ascenso"
         />
       </div>
 
