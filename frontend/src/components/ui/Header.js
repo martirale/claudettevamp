@@ -18,6 +18,10 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const menuItems = [
@@ -72,20 +76,37 @@ const Header = () => {
         </Link>
       </div>
       <button onClick={toggleMenu} className="text-white p-2">
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          ></path>
-        </svg>
+        {isMenuOpen ? (
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        ) : (
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        )}
       </button>
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-scarlet">
@@ -94,6 +115,7 @@ const Header = () => {
               key={index}
               href={item.href}
               className="font-LeMurmure text-2xl block p-4 text-white"
+              onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
             </Link>
