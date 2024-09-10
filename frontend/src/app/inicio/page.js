@@ -1,8 +1,5 @@
 import { getMetadata } from "@/lib/getMetadata";
 import Image from "next/image";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 export const metadata = getMetadata({
   title: "Claudette Vamp",
