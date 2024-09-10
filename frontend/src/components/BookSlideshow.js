@@ -36,7 +36,7 @@ export default function BookSlideshow() {
             key={index}
             className="flex items-center justify-center"
           >
-            <div className="relative md:w-[320px] md:h-[512px] 2xl:w-[380px] 2xl:h-[608px]">
+            <div className="relative md:w-[320px] md:h-[512px] 2xl:w-[375px] 2xl:h-[600px]">
               <Image
                 src={cover.src}
                 alt={cover.alt}
