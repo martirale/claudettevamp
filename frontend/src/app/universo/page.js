@@ -2,6 +2,7 @@ import BoxCard from "@/components/ui/BoxCard";
 import DividerLogo from "@/components/ui/DividerLogo";
 import { getMetadata } from "@/lib/getMetadata";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = getMetadata({
   title: "Universo literario — Claudette Vamp",
@@ -11,6 +12,37 @@ export const metadata = getMetadata({
   image: "https://claudettevamp.com/claudette-cover.webp",
   canonical: "https://claudettevamp.com/universo",
 });
+
+const novels = [
+  {
+    id: "1",
+    title: "Claudette, reencarnación",
+    url: "https://www.amazon.com/dp/B0BNZLP26R",
+  },
+  {
+    id: "2",
+    title: "Claudette, descenso",
+    url: "https://www.amazon.com/dp/B0CJ4M7R6G",
+  },
+  {
+    id: "3",
+    title: "Claudette, reina y princesa",
+    url: "https://www.amazon.com/dp/B0CNBD75R1",
+  },
+];
+
+const tales = [
+  {
+    id: "1",
+    title: "La Gran Purga Oscura",
+    url: "https://www.amazon.com/dp/B0CN947ZF1",
+  },
+  {
+    id: "2",
+    title: "Carmilla, sueños oscuros",
+    url: "https://www.amazon.com/dp/B0CN96L3M4",
+  },
+];
 
 export default function Home() {
   return (
@@ -88,13 +120,54 @@ export default function Home() {
         {/* SIDEBAR */}
         <div className="col-span-12 md:col-span-4">
           <BoxCard className="mt-16 md:mt-5">
-            <h3 className="font-LeMurmure text-scarlet text-3xl">
-              Lorem Ipsum
-            </h3>
+            <Image
+              src="/books/claudette-caida-ascenso.png"
+              width="688"
+              height="600"
+              quality={100}
+              className="w-full h-auto"
+              alt="Claudette, caída y ascenso"
+            />
 
             <DividerLogo className="py-4" />
 
-            <p>Lorem ipsum dolor sit amet.</p>
+            <h3 className="font-LeMurmure text-scarlet text-xl uppercase mb-3">
+              Caída y ascenso
+            </h3>
+            <ul>
+              {novels.map((novel) => (
+                <li key={novel.id}>
+                  <Link
+                    href={novel.url}
+                    target="_blank"
+                    rel="noopener"
+                    className="hover:text-scarlet hover:underline"
+                  >
+                    {novel.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <DividerLogo className="py-4" />
+
+            <h3 className="font-LeMurmure text-scarlet text-xl uppercase mb-3">
+              Claudette Vamp: Relatos
+            </h3>
+            <ul>
+              {tales.map((tale) => (
+                <li key={tale.id}>
+                  <Link
+                    href={tale.url}
+                    target="_blank"
+                    rel="noopener"
+                    className="hover:text-scarlet hover:underline"
+                  >
+                    {tale.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </BoxCard>
         </div>
       </section>
