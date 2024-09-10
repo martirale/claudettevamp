@@ -1,3 +1,4 @@
+import BoxCard from "@/components/ui/BoxCard";
 import { getMetadata } from "@/lib/getMetadata";
 import Link from "next/link";
 
@@ -16,7 +17,7 @@ export default function Home() {
       <h1>Universo literario</h1>
 
       <section className="grid grid-cols-1 md:grid-cols-12 gap-4">
-        <div className="col-span-12 md:col-span-9">
+        <div className="col-span-12 md:col-span-8">
           <h2 className="font-LeMurmure text-scarlet text-5xl md:text-7xl mb-16">
             Universo literario
           </h2>
@@ -81,6 +82,13 @@ export default function Home() {
             </Link>{" "}
             que expanden el universo.
           </p>
+        </div>
+
+        {/* SIDEBAR */}
+        <div className="col-span-12 md:col-span-4">
+          <BoxCard>
+            <h2>Lorem Ipsum</h2>
+          </BoxCard>
         </div>
       </section>
     </div>
