@@ -1,8 +1,4 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import Image from "next/image";
-import { register } from "swiper/element/bundle";
+import styles from "./universe.module.css";
 
 export default function UniverseSlideshow() {
   return (
