@@ -10,27 +10,27 @@ const slides = [
   {
     image: "/sample-v.png",
     url: "#",
-    title: "Slide 1",
+    title: "Libros",
   },
   {
     image: "/sample-v.png",
     url: "#",
-    title: "Slide 2",
+    title: "Protagonistas",
   },
   {
     image: "/sample-v.png",
     url: "#",
-    title: "Slide 3",
+    title: "Antagonistas",
   },
   {
     image: "/sample-v.png",
     url: "#",
-    title: "Slide 4",
+    title: "Facciones",
   },
   {
     image: "/sample-v.png",
     url: "#",
-    title: "Slide 5",
+    title: "Mitología",
   },
 ];
 
