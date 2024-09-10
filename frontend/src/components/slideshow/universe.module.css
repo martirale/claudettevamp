@@ -1,0 +1,38 @@
+.swiper {
+  padding: 20px 0;
+}
+
+.swiperSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hexagon {
+  width: 256px;
+  height: 359px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  overflow: hidden;
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .hexagon {
+    width: 300px;
+    height: 421px;
+  }
+}
