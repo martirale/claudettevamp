@@ -17,7 +17,7 @@ export default function Home() {
     <div>
       <h1>Universo literario</h1>
 
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-4">
+      <section className="grid grid-cols-1 md:grid-cols-12 gap-8">
         <div className="col-span-12 md:col-span-8">
           <h2 className="font-LeMurmure text-scarlet text-6xl md:text-7xl mb-16">
             Universo literario
