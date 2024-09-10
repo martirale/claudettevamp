@@ -37,7 +37,7 @@ const Header = () => {
     const midPoint = Math.ceil(menuItems.length / 2);
     return (
       <>
-        <div className="font-LeMurmure text-2xl flex-1 flex justify-end space-x-16">
+        <div className="font-LeMurmure text-2xl flex-1 flex justify-end space-x-16 uppercase">
           {menuItems.slice(0, midPoint).map((item, index) => (
             <Link
               key={index}
@@ -53,7 +53,7 @@ const Header = () => {
             <MonogramClaudette className="fill-scarlet w-[51px] h-[72px]" />
           </Link>
         </div>
-        <div className="font-LeMurmure text-2xl flex-1 flex justify-start space-x-16">
+        <div className="font-LeMurmure text-2xl flex-1 flex justify-start space-x-16 uppercase">
           {menuItems.slice(midPoint).map((item, index) => (
             <Link
               key={index}
@@ -109,12 +109,12 @@ const Header = () => {
         )}
       </button>
       {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-scarlet">
+        <div className="absolute top-full left-0 w-full py-4 bg-scarlet">
           {menuItems.map((item, index) => (
             <Link
               key={index}
               href={item.href}
-              className="font-LeMurmure text-2xl block p-4 text-white"
+              className="font-LeMurmure text-2xl block px-4 py-2 text-white uppercase"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
