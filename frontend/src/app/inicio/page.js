@@ -1,5 +1,5 @@
+import HeroBooks from "@/components/hero/HeroBooks";
 import { getMetadata } from "@/lib/getMetadata";
-import Image from "next/image";
 
 export const metadata = getMetadata({
   title: "Claudette Vamp",
@@ -15,16 +15,7 @@ export default function Home() {
     <div>
       <h1>Claudette Vamp</h1>
 
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8">
-        <div className="col-span-12 md:col-span-6">
-          <Image
-            src="/books/claudette-caida-ascenso.png"
-            width="688"
-            height="600"
-            className="w-full h-auto"
-          />
-        </div>
-      </section>
+      <HeroBooks />
     </div>
   );
 }
