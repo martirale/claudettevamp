@@ -1,12 +1,9 @@
-// src/app/libros/[slug]/page.js
-
 import { getMetadata } from "@/lib/getMetadata";
 
-// Esta función se ejecuta durante la generación de la página y permite la configuración dinámica de los metadatos
 export async function generateMetadata({ params }) {
   const { slug } = params;
   const res = await fetch(`http://localhost:3010/books/${slug}`, {
-    cache: "no-store", // Utiliza esta opción si quieres desactivar el cache
+    cache: "no-store",
   });
 
   if (!res.ok) {
