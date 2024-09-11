@@ -13,7 +13,9 @@ export const metadata = getMetadata({
 });
 
 async function fetchAllBooks() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books`, {
+    cache: "no-store",
+  });
   if (!response.ok) {
     throw new Error("Error al obtener los libros");
   }
