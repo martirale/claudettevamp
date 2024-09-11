@@ -34,7 +34,7 @@ const slides = [
   },
   {
     image: "/sample-v.png",
-    url: "#",
+    url: "/autor",
     title: "Autor",
   },
 ];
