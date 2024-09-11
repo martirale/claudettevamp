@@ -1,8 +1,9 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Scrollbar, Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/navigation";
 import styles from "./universe.module.css";
 import Link from "next/link";
 
@@ -47,9 +48,10 @@ export default function UniverseSlideshow() {
       </h2>
 
       <Swiper
-        modules={[Autoplay]}
+        modules={[Autoplay, Navigation]}
         spaceBetween={30}
         slidesPerView={1}
+        navigation={{ clickable: true }}
         loop={true}
         scrollbar={{ draggable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
