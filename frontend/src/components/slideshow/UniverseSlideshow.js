@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./universe.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const slides = [
   {
@@ -66,9 +67,11 @@ export default function UniverseSlideshow() {
           <SwiperSlide key={index} className={styles.swiperSlide}>
             <Link href={slide.url}>
               <div className={styles.hexagon}>
-                <img
+                <Image
                   src={slide.image}
                   alt={slide.title}
+                  width={300}
+                  height={421}
                   className={styles.slideImage}
                 />
               </div>
