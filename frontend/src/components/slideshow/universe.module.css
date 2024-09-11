@@ -36,3 +36,10 @@
     height: 421px;
   }
 }
+
+@media (min-width: 1536px) {
+  .hexagon {
+    width: 350px;
+    height: 491px;
+  }
+}

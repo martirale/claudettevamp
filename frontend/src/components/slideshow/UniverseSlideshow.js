@@ -50,7 +50,7 @@ export default function UniverseSlideshow() {
 
       <Swiper
         modules={[Autoplay, Navigation]}
-        spaceBetween={10}
+        spaceBetween={0}
         slidesPerView={1}
         navigation={{ clickable: true }}
         loop={true}
