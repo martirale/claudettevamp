@@ -44,7 +44,7 @@ const tales = [
   },
 ];
 
-export default function Home() {
+export default function Universe() {
   return (
     <div>
       <h1>Universo literario</h1>
