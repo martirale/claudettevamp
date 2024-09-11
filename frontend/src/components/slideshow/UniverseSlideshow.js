@@ -32,6 +32,11 @@ const slides = [
     url: "#",
     title: "Mitología",
   },
+  {
+    image: "/sample-v.png",
+    url: "#",
+    title: "Autor",
+  },
 ];
 
 export default function UniverseSlideshow() {
