@@ -25,12 +25,16 @@ exports.addNewBook = (req, res) => {
     goodreads,
   } = req.body;
 
+  // Verifica si `synopsis` es un objeto, si es así, conviértelo a una cadena JSON
+  const formattedSynopsis =
+    typeof synopsis === "object" ? JSON.stringify(synopsis) : synopsis;
+
   const sql = `INSERT INTO books (title, synopsis, series, pages, publish, cover, amazon, apple, goodreads)
                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
   const values = [
     title,
-    synopsis,
+    formattedSynopsis,
     series,
     pages,
     publish,
