@@ -10,7 +10,7 @@ import Image from "next/image";
 const slides = [
   {
     image: "/sample-v.png",
-    url: "#",
+    url: "/libros",
     title: "Libros",
   },
   {
