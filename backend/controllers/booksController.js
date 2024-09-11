@@ -54,3 +54,21 @@ exports.addNewBook = (req, res) => {
     res.status(201).json({ id: results.insertId, ...req.body });
   });
 };
+
+// Obtener un libro por slug
+exports.getBookBySlug = (req, res) => {
+  const { slug } = req.params;
+
+  const sql = `SELECT * FROM books WHERE slug = ?`;
+
+  db.query(sql, [slug], (error, results) => {
+    if (error) {
+      console.error("Error al obtener el libro por slug:", error);
+      return res.status(500).json({ error: "Error al obtener el libro" });
+    }
+    if (results.length === 0) {
+      return res.status(404).json({ error: "Libro no encontrado" });
+    }
+    res.json(results[0]);
+  });
+};
