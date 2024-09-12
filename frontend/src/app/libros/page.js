@@ -41,7 +41,7 @@ export default async function Universe() {
     <div>
       <h1>Libros</h1>
 
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <section className="grid grid-cols-1 md:grid-cols-12">
         <div className="col-span-12">
           <div className="mb-32">
             <h2 className="font-LeMurmure text-scarlet text-center text-6xl md:text-7xl">
@@ -50,7 +50,7 @@ export default async function Universe() {
 
             <DividerLogo className="my-8" />
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {booksCaida.map((book, index) => (
                 <Link key={index} href={`/libro/${book.slug}`}>
                   <Image
@@ -59,7 +59,7 @@ export default async function Universe() {
                     width={400}
                     height={640}
                   />
-                  <h4 className="text-center mt-4">{book.title}</h4>
+                  <h4 className="text-center my-4">{book.title}</h4>
                 </Link>
               ))}
             </div>
@@ -72,7 +72,7 @@ export default async function Universe() {
 
             <DividerLogo className="my-8" />
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {booksRelatos.map((book, index) => (
                 <Link key={index} href={`/libro/${book.slug}`}>
                   <Image
@@ -81,7 +81,7 @@ export default async function Universe() {
                     width={400}
                     height={640}
                   />
-                  <h4 className="text-center mt-4">{book.title}</h4>
+                  <h4 className="text-center my-4">{book.title}</h4>
                 </Link>
               ))}
             </div>
