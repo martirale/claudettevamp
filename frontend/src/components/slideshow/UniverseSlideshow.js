@@ -5,38 +5,54 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import styles from "./universe.module.css";
 import Link from "next/link";
-import Image from "next/image";
+import {
+  BooksCard,
+  ProtagonistCard,
+  AntagonistCard,
+  FactionsCard,
+  MythCard,
+  AuthorCard,
+} from "@/utils/UniverseSlideshowPaths";
+
+const pathMap = {
+  books: BooksCard,
+  protagonist: ProtagonistCard,
+  antagonist: AntagonistCard,
+  factions: FactionsCard,
+  myth: MythCard,
+  author: AuthorCard,
+};
 
 const slides = [
   {
-    image: "/cards/Books.svg",
     url: "/libros",
     title: "Libros",
+    path: "books",
   },
   {
-    image: "/cards/Protagonist.svg",
     url: "#",
     title: "Protagonistas",
+    path: "protagonist",
   },
   {
-    image: "/cards/Antagonist.svg",
     url: "#",
     title: "Antagonistas",
+    path: "antagonist",
   },
   {
-    image: "/cards/Factions.svg",
     url: "#",
     title: "Facciones",
+    path: "factions",
   },
   {
-    image: "/cards/Mytho.svg",
     url: "#",
     title: "Mitología",
+    path: "myth",
   },
   {
-    image: "/cards/Author.svg",
     url: "/autor",
     title: "Autor",
+    path: "author",
   },
 ];
 
@@ -64,18 +80,33 @@ export default function UniverseSlideshow() {
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className={styles.swiperSlide}>
             <div className={styles.hexagonWrapper}>
-              <div className={styles.hexagonBorder}>
+              {" "}
+              <div className={`${styles.hexagonBorder} group`}>
                 <div className={styles.hexagon}>
-                  <Link href={slide.url} className="hover:text-scarlet">
-                    <Image
-                      src={slide.image}
-                      alt={slide.title}
-                      width={350}
-                      height={491}
-                      className={styles.slideImage}
-                    />
+                  <Link href={slide.url}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 1080 1517.94"
+                    >
+                      <rect
+                        className="fill-[#151515]"
+                        y="-.03"
+                        width="1080"
+                        height="1518"
+                      />
+                      <circle
+                        className="fill-[#111111]"
+                        cx="540"
+                        cy="758.97"
+                        r="266.26"
+                      />
+                      <path
+                        className="fill-darkGrey group-hover:fill-scarlet"
+                        d={pathMap[slide.path]}
+                      />
+                    </svg>
                     <h3
-                      className={`${styles.slideTitle} font-LeMurmure text-3xl`}
+                      className={`${styles.slideTitle} font-LeMurmure text-4xl`}
                     >
                       {slide.title}
                     </h3>
