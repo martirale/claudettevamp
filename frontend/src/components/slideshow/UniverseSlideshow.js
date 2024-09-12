@@ -63,19 +63,25 @@ export default function UniverseSlideshow() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className={styles.swiperSlide}>
-            <div className={styles.hexagon}>
-              <Link href={slide.url}>
-                <Image
-                  src={slide.image}
-                  alt={slide.title}
-                  width={350}
-                  height={491}
-                  className={styles.slideImage}
-                />
-                <h3 className={`${styles.slideTitle} font-LeMurmure text-3xl`}>
-                  {slide.title}
-                </h3>
-              </Link>
+            <div className={styles.hexagonWrapper}>
+              <div className={styles.hexagonBorder}>
+                <div className={styles.hexagon}>
+                  <Link href={slide.url} className="hover:text-scarlet">
+                    <Image
+                      src={slide.image}
+                      alt={slide.title}
+                      width={350}
+                      height={491}
+                      className={styles.slideImage}
+                    />
+                    <h3
+                      className={`${styles.slideTitle} font-LeMurmure text-3xl`}
+                    >
+                      {slide.title}
+                    </h3>
+                  </Link>
+                </div>
+              </div>
             </div>
           </SwiperSlide>
         ))}
