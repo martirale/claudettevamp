@@ -17,7 +17,7 @@ export default function HeroBooks() {
       </div>
 
       <div className="col-span-12 md:col-span-6 flex flex-col justify-center">
-        <LogoCaidaAscenso className="w-full h-auto px-8 md:px-16 fill-scarlet" />
+        <LogoCaidaAscenso className="w-full h-auto px-4 md:px-8 fill-scarlet" />
 
         <div>
           <p className="uppercase text-sm text-center mt-12 mb-4">
