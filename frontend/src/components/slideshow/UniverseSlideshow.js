@@ -63,8 +63,8 @@ export default function UniverseSlideshow() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className={styles.swiperSlide}>
-            <Link href={slide.url}>
-              <div className={styles.hexagon}>
+            <div className={styles.hexagon}>
+              <Link href={slide.url}>
                 <Image
                   src={slide.image}
                   alt={slide.title}
@@ -72,11 +72,11 @@ export default function UniverseSlideshow() {
                   height={491}
                   className={styles.slideImage}
                 />
-              </div>
-              <h3 className={`${styles.slideTitle} font-LeMurmure text-3xl`}>
-                {slide.title}
-              </h3>
-            </Link>
+                <h3 className={`${styles.slideTitle} font-LeMurmure text-3xl`}>
+                  {slide.title}
+                </h3>
+              </Link>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
