@@ -17,17 +17,17 @@ const novels = [
   {
     id: "1",
     title: "Claudette, reencarnación",
-    url: "https://www.amazon.com/dp/B0BNZLP26R",
+    url: "/libro/claudette-reencarnacion",
   },
   {
     id: "2",
     title: "Claudette, descenso",
-    url: "https://www.amazon.com/dp/B0CJ4M7R6G",
+    url: "/libro/claudette-descenso",
   },
   {
     id: "3",
     title: "Claudette, reina y princesa",
-    url: "https://www.amazon.com/dp/B0CNBD75R1",
+    url: "/libro/claudette-reina-princesa",
   },
 ];
 
@@ -35,12 +35,12 @@ const tales = [
   {
     id: "1",
     title: "La Gran Purga Oscura",
-    url: "https://www.amazon.com/dp/B0CN947ZF1",
+    url: "/libro/gran-purga-oscura",
   },
   {
     id: "2",
     title: "Carmilla, sueños oscuros",
-    url: "https://www.amazon.com/dp/B0CN96L3M4",
+    url: "/libro/carmilla",
   },
 ];
 
@@ -147,8 +147,6 @@ export default function Universe() {
                 <li key={novel.id}>
                   <Link
                     href={novel.url}
-                    target="_blank"
-                    rel="noopener"
                     className="hover:text-scarlet hover:underline"
                   >
                     {novel.title}
@@ -167,8 +165,6 @@ export default function Universe() {
                 <li key={tale.id}>
                   <Link
                     href={tale.url}
-                    target="_blank"
-                    rel="noopener"
                     className="hover:text-scarlet hover:underline"
                   >
                     {tale.title}
