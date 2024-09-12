@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const slides = [
   {
-    image: "/sample-v.png",
+    image: "/slideshows/universe/claudette-libros.webp",
     url: "/libros",
     title: "Libros",
   },
@@ -34,7 +34,7 @@ const slides = [
     title: "Mitología",
   },
   {
-    image: "/sample-v.png",
+    image: "/slideshows/universe/alejandro-martir.webp",
     url: "/autor",
     title: "Autor",
   },
