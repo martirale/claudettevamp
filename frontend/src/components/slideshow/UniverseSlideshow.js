@@ -9,32 +9,32 @@ import Image from "next/image";
 
 const slides = [
   {
-    image: "/sample-v.png",
+    image: "/cards/Books.svg",
     url: "/libros",
     title: "Libros",
   },
   {
-    image: "/sample-v.png",
+    image: "/cards/Protagonist.svg",
     url: "#",
     title: "Protagonistas",
   },
   {
-    image: "/sample-v.png",
+    image: "/cards/Antagonist.svg",
     url: "#",
     title: "Antagonistas",
   },
   {
-    image: "/sample-v.png",
+    image: "/cards/Factions.svg",
     url: "#",
     title: "Facciones",
   },
   {
-    image: "/sample-v.png",
+    image: "/cards/Mytho.svg",
     url: "#",
     title: "Mitología",
   },
   {
-    image: "/sample-v.png",
+    image: "/cards/Author.svg",
     url: "/autor",
     title: "Autor",
   },
