@@ -27,8 +27,8 @@ const Header = () => {
   const menuItems = [
     { name: "Inicio", href: "/inicio" },
     { name: "Universo", href: "/universo" },
-    { name: "Novela", href: "/novela" },
-    { name: "Relatos", href: "/relatos" },
+    { name: "Libros", href: "/libros" },
+    { name: "Media", href: "/" },
   ];
 
   const isMobile = windowWidth < 768;
