@@ -59,12 +59,7 @@ export default function Universe() {
             Claudette Vamp es un universo literario de fantasía oscura y romance
             ambientado en el mundo real y contemporáneo (aunque oculto de este)
             escrito por{" "}
-            <Link
-              href="https://alemartir.com"
-              target="_blank"
-              rel="noopener"
-              className="text-scarlet hover:underline"
-            >
+            <Link href="/autor" className="text-scarlet hover:underline">
               Alejandro Mártir.
             </Link>
           </p>
