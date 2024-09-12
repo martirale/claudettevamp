@@ -37,7 +37,7 @@ export default function StoresButtons() {
           href={store.url}
           target={store.target}
           rel="noopener"
-          className="px-2 py-4 border border-black transition-colors hover:border-scarlet flex items-center justify-center"
+          className="px-2 py-4 border border-darkGrey transition-colors hover:border-scarlet flex items-center justify-center"
         >
           <Image src={store.image} width={store.width} height={store.height} />
         </Link>
