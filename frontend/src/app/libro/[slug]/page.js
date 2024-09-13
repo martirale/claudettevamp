@@ -1,4 +1,6 @@
 import { getMetadata } from "@/lib/getMetadata";
+import { formatDate } from "@/lib/formatDate";
+import Image from "next/image";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
@@ -44,13 +46,57 @@ export default async function BookPage({ params }) {
     <div>
       <h1>{book.title}</h1>
 
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8">
-        <div className="col-span-12 md:col-span-8">
-          <h2 className="font-LeMurmure text-scarlet text-6xl md:text-7xl mb-48 md:mb-32">
-            {book.title}
-          </h2>
+      <section className="flex flex-col md:flex-row gap-8">
+        <div className="md:w-2/3 flex flex-col justify-between">
+          <div>
+            <h2 className="font-LeMurmure text-scarlet text-6xl md:text-7xl mb-48 md:mb-32">
+              {book.title}
+            </h2>
+            <p className="mb-12">{book.synopsis}</p>
 
-          <p>{book.synopsis}</p>
+            <h3 className="font-LeMurmure text-scarlet text-xl">
+              Información del libro
+            </h3>
+            <ul className="grid grid-cols-2 gap-2 my-4">
+              <li>
+                <span className="font-bold">Páginas:</span>
+                <br className="block md:hidden" /> {book.pages}
+              </li>
+              <li>
+                <span className="font-bold">Publicación:</span>
+                <br className="block md:hidden" /> {formatDate(book.publish)}
+              </li>
+              <li>
+                <span className="font-bold">Editorial:</span>
+                <br className="block md:hidden" /> {book.editorial}
+              </li>
+              <li>
+                <span className="font-bold">ISBN:</span>
+                <br className="block md:hidden" /> {book.isbn}
+              </li>
+              <li>
+                <span className="font-bold">Género:</span>
+                <br className="block md:hidden" /> {book.genre}
+              </li>
+              <li>
+                <span className="font-bold">Formato:</span>
+                <br className="block md:hidden" /> {book.format}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* BOOK COVER */}
+        <div className="md:w-1/3 flex justify-center">
+          <div className="relative w-full mt-16 md:mt-5">
+            <Image
+              src={book.cover}
+              alt={book.title}
+              width={400}
+              height={640}
+              objectFit="cover"
+            />
+          </div>
         </div>
       </section>
     </div>
