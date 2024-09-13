@@ -1,6 +1,8 @@
 import { getMetadata } from "@/lib/getMetadata";
 import Link from "next/link";
 import HexagonCard from "@/components/hexagon/HexagonCard";
+import BoxCard from "@/components/ui/BoxCard";
+import DividerLogo from "@/components/ui/DividerLogo";
 
 export const metadata = getMetadata({
   title: " Alejandro Mártir — Claudette Vamp",
@@ -16,8 +18,8 @@ export default function Author() {
     <div>
       <h1>Alejandro Mártir</h1>
 
-      <section className="flex flex-col md:flex-row gap-8">
-        <div className="md:w-2/3 flex flex-col">
+      <section className="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div className="col-span-12 md:col-span-8">
           <h2 className="font-LeMurmure text-scarlet text-6xl md:text-7xl mb-48 md:mb-32">
             Alejandro Mártir
           </h2>
@@ -43,12 +45,53 @@ export default function Author() {
           </p>
         </div>
 
-        <div className="md:w-1/3 flex justify-center">
-          <HexagonCard
-            source="/alejandro-martir.webp"
-            alternative="alejandro-martir"
-            className="mt-5"
-          />
+        {/* SIDEBAR */}
+        <div className="col-span-12 md:col-span-4">
+          <BoxCard className="mt-16 md:mt-5">
+            <HexagonCard
+              source="/alejandro-martir.webp"
+              alternative="alejandro-martir"
+              className="my-5 px-8 md:px-16"
+            />
+
+            <DividerLogo className="py-4" />
+
+            <h3 className="font-LeMurmure text-scarlet text-xl mb-3">
+              Contacto
+            </h3>
+            <ul>
+              <li>
+                <span className="font-bold">Email:</span>{" "}
+                <Link
+                  href="mailto:hola@alemartir.com"
+                  className="hover:text-scarlet hover:underline"
+                >
+                  hola@alemartir.com
+                </Link>
+              </li>
+              <li>
+                <span className="font-bold">Teléfono:</span>{" "}
+                <Link
+                  href="https://wa.me/message/ZW5NRUU3HCGUO1"
+                  target="_blank"
+                  rel="noopener"
+                  className="hover:text-scarlet hover:underline"
+                >
+                  +503 7840 2216
+                </Link>
+              </li>
+              <li>
+                <span className="font-bold">Website:</span>{" "}
+                <Link
+                  href="https://alemartir.com"
+                  target="_blank"
+                  className="hover:text-scarlet hover:underline"
+                >
+                  alemartir.com
+                </Link>
+              </li>
+            </ul>
+          </BoxCard>
         </div>
       </section>
     </div>
