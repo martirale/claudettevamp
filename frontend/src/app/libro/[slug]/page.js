@@ -75,14 +75,14 @@ export default async function BookPage({ params }) {
       <h1>{book.title}</h1>
 
       <section className="flex flex-col md:flex-row gap-8">
-        <div className="md:w-2/3 flex flex-col justify-between">
+        <div className="md:w-2/3 flex flex-col">
           <div>
             <h2 className="font-LeMurmure text-scarlet text-6xl md:text-7xl mb-48 md:mb-32">
               {book.title}
             </h2>
             <p className="mb-12">{book.synopsis}</p>
 
-            <h3 className="font-LeMurmure text-scarlet text-xl">
+            <h3 className="font-LeMurmure text-scarlet text-2xl">
               Información del libro
             </h3>
             <ul className="grid grid-cols-2 gap-2 my-4">
