@@ -1,5 +1,6 @@
 import { getMetadata } from "@/lib/getMetadata";
 import Link from "next/link";
+import HexagonCard from "@/components/hexagon/HexagonCard";
 
 export const metadata = getMetadata({
   title: " Alejandro Mártir — Claudette Vamp",
@@ -15,8 +16,8 @@ export default function Author() {
     <div>
       <h1>Alejandro Mártir</h1>
 
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8">
-        <div className="col-span-12 md:col-span-8">
+      <section className="flex flex-col md:flex-row gap-8">
+        <div className="md:w-2/3 flex flex-col">
           <h2 className="font-LeMurmure text-scarlet text-6xl md:text-7xl mb-48 md:mb-32">
             Alejandro Mártir
           </h2>
@@ -44,6 +45,14 @@ export default function Author() {
             en las cosas con las que se involucra. Le fascina el diseño, el
             cine, el café y cualquier prenda de color negro.
           </p>
+        </div>
+
+        <div className="md:w-1/3 flex justify-center">
+          <HexagonCard
+            source="/alejandro-martir.webp"
+            alternative="alejandro-martir"
+            className="mt-16 md:mt-5"
+          />
         </div>
       </section>
     </div>
