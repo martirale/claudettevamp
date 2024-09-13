@@ -51,7 +51,7 @@ export default function Author() {
           <HexagonCard
             source="/alejandro-martir.webp"
             alternative="alejandro-martir"
-            className="mt-16 md:mt-5"
+            className="mt-5"
           />
         </div>
       </section>
