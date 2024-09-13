@@ -89,16 +89,10 @@ export default function UniverseSlideshow() {
                       viewBox="0 0 1080 1517.94"
                     >
                       <rect
-                        className="fill-[#151515]"
+                        className="fill-[#111111]"
                         y="-.03"
                         width="1080"
                         height="1518"
-                      />
-                      <circle
-                        className="fill-[#111111]"
-                        cx="540"
-                        cy="758.97"
-                        r="266.26"
                       />
                       <path
                         className="fill-darkGrey group-hover:fill-scarlet"
