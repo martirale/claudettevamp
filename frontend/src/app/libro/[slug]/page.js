@@ -1,6 +1,7 @@
 import { getMetadata } from "@/lib/getMetadata";
 import { formatDate } from "@/lib/formatDate";
 import Image from "next/image";
+import Link from "next/link";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
@@ -41,6 +42,33 @@ export default async function BookPage({ params }) {
   }
 
   const book = await res.json();
+
+  const stores = [
+    {
+      id: "1",
+      image: "/stores/amazon-com.svg",
+      width: "150",
+      height: "44",
+      url: book.amazon,
+      target: "_blank",
+    },
+    {
+      id: "2",
+      image: "/stores/apple-books.svg",
+      width: "150",
+      height: "44",
+      url: book.apple,
+      target: "_blank",
+    },
+    {
+      id: "3",
+      image: "/stores/goodreads.svg",
+      width: "150",
+      height: "44",
+      url: book.goodreads,
+      target: "_blank",
+    },
+  ];
 
   return (
     <div>
@@ -83,6 +111,26 @@ export default async function BookPage({ params }) {
                 <br className="block md:hidden" /> {book.format}
               </li>
             </ul>
+          </div>
+
+          <div className="grid text-center gap-4 md:grid-cols-3 mt-12">
+            {stores.map((store) =>
+              store.url ? (
+                <Link
+                  key={store.id}
+                  href={store.url}
+                  target={store.target}
+                  rel="noopener"
+                  className="px-2 py-4 border border-darkGrey transition-colors hover:border-scarlet flex items-center justify-center"
+                >
+                  <Image
+                    src={store.image}
+                    width={store.width}
+                    height={store.height}
+                  />
+                </Link>
+              ) : null
+            )}
           </div>
         </div>
 
