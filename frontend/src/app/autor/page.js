@@ -37,13 +37,9 @@ export default function Author() {
             >
               Claudette, caída y ascenso
             </Link>
-            .
-          </p>
-
-          <p>
-            Es alguien que ama lo que hace, por lo que suele entregarse de lleno
-            en las cosas con las que se involucra. Le fascina el diseño, el
-            cine, el café y cualquier prenda de color negro.
+            . Es alguien que ama lo que hace, por lo que suele entregarse de
+            lleno en las cosas con las que se involucra. Le fascina el diseño,
+            el cine, el café y cualquier prenda de color negro.
           </p>
         </div>
 
