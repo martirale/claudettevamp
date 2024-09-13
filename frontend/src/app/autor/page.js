@@ -8,9 +8,9 @@ export const metadata = getMetadata({
   title: " Alejandro Mártir — Claudette Vamp",
   description:
     "Claudette Vamp es una trilogía de novelas cortas de fantasía oscura y romance escritas por Alejandro Mártir.",
-  url: "https://claudettevamp.com/inicio",
+  url: "https://claudettevamp.com/autor",
   image: "https://claudettevamp.com/claudette-cover.webp",
-  canonical: "https://claudettevamp.com/inicio",
+  canonical: "https://claudettevamp.com/autor",
 });
 
 export default function Author() {
@@ -51,7 +51,7 @@ export default function Author() {
             <HexagonCard
               source="/alejandro-martir.webp"
               alternative="alejandro-martir"
-              className="mb-5 px-8 md:px-16"
+              className="mb-5"
             />
 
             <DividerLogo className="py-4" />

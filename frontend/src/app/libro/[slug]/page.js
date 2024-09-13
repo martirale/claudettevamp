@@ -25,9 +25,9 @@ export async function generateMetadata({ params }) {
     title: `${book.title} — Claudette Vamp`,
     description:
       "Claudette Vamp es una trilogía de novelas cortas de fantasía oscura y romance escritas por Alejandro Mártir.",
-    url: `https://claudettevamp.com/libros/${book.slug}`,
+    url: `https://claudettevamp.com/libro/${book.slug}`,
     image: `https://claudettevamp.com${book.cover}`,
-    canonical: `https://claudettevamp.com/libros/${book.slug}`,
+    canonical: `https://claudettevamp.com/libro/${book.slug}`,
   });
 }
 
