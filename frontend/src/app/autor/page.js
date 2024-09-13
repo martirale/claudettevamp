@@ -51,7 +51,7 @@ export default function Author() {
             <HexagonCard
               source="/alejandro-martir.webp"
               alternative="alejandro-martir"
-              className="my-5 px-8 md:px-16"
+              className="mb-5 px-8 md:px-16"
             />
 
             <DividerLogo className="py-4" />
