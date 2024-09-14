@@ -4,6 +4,7 @@ const app = express();
 const port = 3010;
 const db = require("./config/db");
 const bookRoutes = require("./routes/books");
+const characterRoutes = require("./routes/characters");
 
 app.use(express.json());
 
@@ -27,6 +28,7 @@ db.getConnection((err, connection) => {
 
 // Usa las rutas de la API
 app.use("/books", bookRoutes);
+app.use("/characters", characterRoutes);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
