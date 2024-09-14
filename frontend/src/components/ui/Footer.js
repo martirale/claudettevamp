@@ -1,15 +1,7 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import LogoClaudette from "../LogoClaudette";
 
 export default function Footer() {
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
-
-  if (isHomePage) return null;
-
   return (
     <footer className="w-full pt-32 pb-8">
       <div className="container mx-auto">

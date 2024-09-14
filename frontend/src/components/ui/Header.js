@@ -9,7 +9,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const pathname = usePathname();
-  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -25,10 +24,10 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const menuItems = [
-    { name: "Inicio", href: "/inicio" },
+    { name: "Inicio", href: "/" },
     { name: "Universo", href: "/universo" },
     { name: "Libros", href: "/libros" },
-    { name: "Media", href: "/" },
+    { name: "Personajes", href: "/personajes" },
   ];
 
   const isMobile = windowWidth < 768;
@@ -49,7 +48,7 @@ const Header = () => {
           ))}
         </div>
         <div className="flex-shrink-0 mx-16">
-          <Link href="/inicio">
+          <Link href="/">
             <MonogramClaudette className="fill-scarlet w-[51px] h-[72px]" />
           </Link>
         </div>
@@ -124,8 +123,6 @@ const Header = () => {
       )}
     </>
   );
-
-  if (isHomePage) return null;
 
   return (
     <header className="fixed top-0 left-0 w-full border-b-scarlet border-b-[1px] bg-darkBlack grain-texture-header z-50">
