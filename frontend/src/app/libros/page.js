@@ -30,7 +30,7 @@ async function fetchAllBooks() {
   return res.json();
 }
 
-export default async function Universe() {
+export default async function BooksPage() {
   let books = [];
 
   try {
