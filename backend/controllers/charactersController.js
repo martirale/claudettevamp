@@ -41,7 +41,7 @@ exports.addNewCharacter = (req, res) => {
   } = req.body;
 
   // Validar que los campos obligatorios estén presentes
-  if (!name || !slug || !type) {
+  if (!name || !slug) {
     return res.status(400).json({ error: "Campos obligatorios faltantes" });
   }
 
