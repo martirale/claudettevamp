@@ -1,7 +1,7 @@
 import { getMetadata } from "@/lib/getMetadata";
 import Link from "next/link";
-import Image from "next/image";
 import DividerLogo from "@/components/ui/DividerLogo";
+import HexagonCard from "@/components/hexagon/HexagonCard";
 
 export const metadata = getMetadata({
   title: "Personajes: antagonistas — Claudette Vamp",
@@ -60,11 +60,9 @@ export default async function AntagonistPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {charactersAntago.map((character, index) => (
                 <Link key={index} href={`/personaje/${character.slug}`}>
-                  <Image
-                    src={character.avatar}
-                    alt={character.name}
-                    width={400}
-                    height={640}
+                  <HexagonCard
+                    source={character.avatar}
+                    alternative={character.name}
                   />
                   <h4 className="text-center my-4">{character.name}</h4>
                 </Link>
