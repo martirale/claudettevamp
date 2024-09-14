@@ -2,59 +2,58 @@ import { getMetadata } from "@/lib/getMetadata";
 import BoxCard from "@/components/ui/BoxCard";
 import HexagonCard from "@/components/hexagon/HexagonCard";
 import DividerLogo from "@/components/ui/DividerLogo";
-import Link from "next/link";
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const res = await fetch(`http://localhost:3010/characters/${slug}`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    return {
+      title: "Personaje no encontrado",
+      description: "El personaje solicitado no se pudo encontrar.",
+      url: "https://claudettevamp.com/personaje/no-encontrado",
+      image: "https://claudettevamp.com/no-cover.webp",
+      canonical: "https://claudettevamp.com/personaje/no-encontrado",
+    };
+  }
+
+  const character = await res.json();
+
   return getMetadata({
-    title: "Lorem — Claudette Vamp",
+    title: `${character.name} — Claudette Vamp`,
     description:
       "Claudette Vamp es una trilogía de novelas cortas de fantasía oscura y romance escritas por Alejandro Mártir.",
-    url: `https://claudettevamp.com/personaje/`,
-    image: `https://claudettevamp.com`,
-    canonical: `https://claudettevamp.com/personaje/`,
+    url: `https://claudettevamp.com/personaje/${character.slug}`,
+    image: `https://claudettevamp.com${character.avatar}`,
+    canonical: `https://claudettevamp.com/personaje/${character.slug}`,
   });
 }
 
-export default async function BookPage() {
+export default async function CharacterPage({ params }) {
+  const { slug } = params;
+  const res = await fetch(`http://localhost:3010/characters/${slug}`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    return <div>Personaje no encontrado</div>;
+  }
+
+  const character = await res.json();
+
   return (
     <div>
-      <h1>Lorem Ipsum</h1>
+      <h1>{character.name}</h1>
 
       <section className="grid grid-cols-1 md:grid-cols-12 gap-8">
         <div className="col-span-12 md:col-span-8">
           <h2 className="font-LeMurmure text-scarlet text-6xl md:text-7xl mb-48 md:mb-32">
-            Lorem Ipsum
+            {character.name}
           </h2>
 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            volutpat sagittis elit, vitae tincidunt dui fermentum a. Mauris sit
-            amet lectus placerat neque molestie luctus. Maecenas non erat in
-            justo aliquet suscipit eu nec lacus. Sed fringilla ut nibh id
-            aliquet. Donec at mi vel elit efficitur efficitur. Pellentesque eget
-            lobortis nulla. Nullam non diam sed mauris venenatis dignissim.
-            Aliquam erat volutpat. Ut vel tincidunt nisl. Suspendisse ac posuere
-            est. Fusce sem leo, varius eu tincidunt interdum, sagittis a lacus.
-            Morbi sit amet vestibulum tortor.
-          </p>
-
-          <DividerLogo className="py-12" />
-
-          <h3 className="font-LeMurmure text-scarlet text-3xl mb-4">
-            Personalidad
-          </h3>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            volutpat sagittis elit, vitae tincidunt dui fermentum a. Mauris sit
-            amet lectus placerat neque molestie luctus. Maecenas non erat in
-            justo aliquet suscipit eu nec lacus. Sed fringilla ut nibh id
-            aliquet. Donec at mi vel elit efficitur efficitur. Pellentesque eget
-            lobortis nulla. Nullam non diam sed mauris venenatis dignissim.
-            Aliquam erat volutpat. Ut vel tincidunt nisl. Suspendisse ac posuere
-            est. Fusce sem leo, varius eu tincidunt interdum, sagittis a lacus.
-            Morbi sit amet vestibulum tortor.
-          </p>
+          <p>{character.description}</p>
 
           <DividerLogo className="py-12" />
 
@@ -62,17 +61,7 @@ export default async function BookPage() {
             Datos curiosos
           </h3>
 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            volutpat sagittis elit, vitae tincidunt dui fermentum a. Mauris sit
-            amet lectus placerat neque molestie luctus. Maecenas non erat in
-            justo aliquet suscipit eu nec lacus. Sed fringilla ut nibh id
-            aliquet. Donec at mi vel elit efficitur efficitur. Pellentesque eget
-            lobortis nulla. Nullam non diam sed mauris venenatis dignissim.
-            Aliquam erat volutpat. Ut vel tincidunt nisl. Suspendisse ac posuere
-            est. Fusce sem leo, varius eu tincidunt interdum, sagittis a lacus.
-            Morbi sit amet vestibulum tortor.
-          </p>
+          <p>{character.curiosity}</p>
         </div>
 
         {/* SIDEBAR */}
@@ -80,7 +69,7 @@ export default async function BookPage() {
           <div className="relative w-full mt-16 md:mt-5">
             <BoxCard className="mt-16 md:mt-5">
               <HexagonCard
-                source="/alejandro-martir.webp"
+                source={character.avatar}
                 alternative="alejandro-martir"
                 className="mb-5"
               />
@@ -88,46 +77,85 @@ export default async function BookPage() {
               <DividerLogo className="py-4" />
 
               <h3 className="font-LeMurmure text-scarlet text-xl mb-3">
-                Nombre Completo (real)
+                {character.name_original}
               </h3>
               <ul>
-                <li>
-                  <span className="font-bold">Edad:</span> XX
+                <li className="mb-2">
+                  <span className="font-bold">Otros nombres:</span>{" "}
+                  {character.name_others}
                 </li>
-                <li>
-                  <span className="font-bold">Género:</span> Lorem
+                <li className="mb-2">
+                  <span className="font-bold">Nacimiento:</span>{" "}
+                  {character.birth}
                 </li>
-                <li>
-                  <span className="font-bold">Especie:</span> Lorem
+                <li className="mb-2">
+                  <span className="font-bold">Familiares:</span>{" "}
+                  {character.family}
                 </li>
-                <li>
-                  <span className="font-bold">Ocupación:</span> Lorem
+                <li className="mb-2">
+                  <span className="font-bold">Clan:</span> {character.clan}
                 </li>
-                <li>
-                  <span className="font-bold">Nacimiento:</span> DD MMM YYYY
-                  (Lorem Ipsum)
+                <li className="mb-2">
+                  <span className="font-bold">Afiliaciones:</span>{" "}
+                  {character.affiliations}
                 </li>
-                <li>
-                  <span className="font-bold">Facción:</span> Lorem
+                <li className="mb-2">
+                  <span className="font-bold">Estado civil:</span>{" "}
+                  {character.relationship}
                 </li>
-                <li>
-                  <span className="font-bold">Relaciones:</span> Lorem
+                <li className="mb-2">
+                  <span className="font-bold">Pareja:</span> {character.couple}
                 </li>
               </ul>
 
               <DividerLogo className="py-4" />
 
               <h3 className="font-LeMurmure text-scarlet text-xl mb-3">
-                Apariciones
+                Información descriptiva
               </h3>
               <ul>
-                <li>
-                  <Link
-                    href="/libro/"
-                    className="hover:text-scarlet hover:underline"
-                  >
-                    Lorem Ipsum
-                  </Link>
+                <li className="mb-2">
+                  <span className="font-bold">Especie:</span>{" "}
+                  {character.species}
+                </li>
+                <li className="mb-2">
+                  <span className="font-bold">Género:</span> {character.gender}
+                </li>
+                <li className="mb-2">
+                  <span className="font-bold">Estatura:</span>{" "}
+                  {character.stature}
+                </li>
+                <li className="mb-2">
+                  <span className="font-bold">Peso:</span> {character.weight}
+                </li>
+                <li className="mb-2">
+                  <span className="font-bold">Ojos:</span> {character.eyes}
+                </li>
+                <li className="mb-2">
+                  <span className="font-bold">Cabello:</span> {character.hair}
+                </li>
+                <li className="mb-2">
+                  <span className="font-bold">Tez:</span> {character.skin}
+                </li>
+              </ul>
+
+              <DividerLogo className="py-4" />
+
+              <h3 className="font-LeMurmure text-scarlet text-xl mb-3">
+                Otros datos
+              </h3>
+              <ul>
+                <li className="mb-2">
+                  <span className="font-bold">Ocupación:</span>{" "}
+                  {character.occupation}
+                </li>
+                <li className="mb-2">
+                  <span className="font-bold">Armamento:</span>{" "}
+                  {character.weapon}
+                </li>
+                <li className="mb-2">
+                  <span className="font-bold">Primera aparición:</span>{" "}
+                  {character.appearance}
                 </li>
               </ul>
             </BoxCard>
