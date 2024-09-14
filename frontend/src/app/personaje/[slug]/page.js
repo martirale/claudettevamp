@@ -110,6 +110,9 @@ export default async function CharacterPage({ params }) {
                   {character.birth}
                 </li>
                 <li className="mb-2">
+                  <span className="font-bold">Muerte:</span> {character.death}
+                </li>
+                <li className="mb-2">
                   <span className="font-bold">Familiares:</span>{" "}
                   {character.family}
                 </li>
