@@ -30,12 +30,12 @@ const slides = [
     path: "books",
   },
   {
-    url: "#",
+    url: "/protagonistas",
     title: "Protagonistas",
     path: "protagonist",
   },
   {
-    url: "#",
+    url: "/antagonistas",
     title: "Antagonistas",
     path: "antagonist",
   },
