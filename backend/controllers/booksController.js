@@ -26,16 +26,17 @@ exports.addNewBook = (req, res) => {
     slug,
   } = req.body;
 
-  // Verifica si `synopsis` es un objeto, si es así, conviértelo a una cadena JSON
-  const formattedSynopsis =
-    typeof synopsis === "object" ? JSON.stringify(synopsis) : synopsis;
+  // Validar campos obligatorios
+  if (!title || !synopsis || !slug) {
+    return res.status(400).json({ error: "Campos obligatorios faltantes" });
+  }
 
   const sql = `INSERT INTO books (title, synopsis, series, pages, publish, cover, amazon, apple, goodreads, slug)
                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
   const values = [
     title,
-    formattedSynopsis,
+    synopsis,
     series,
     pages,
     publish,
@@ -51,7 +52,22 @@ exports.addNewBook = (req, res) => {
       console.error("Error al agregar el libro:", error);
       return res.status(500).json({ error: "Error al agregar el libro" });
     }
-    res.status(201).json({ id: results.insertId, ...req.body });
+
+    // Opcional: Hacer una consulta para obtener los detalles del libro recién creado
+    const insertedBookId = results.insertId;
+    db.query(
+      "SELECT * FROM books WHERE id = ?",
+      [insertedBookId],
+      (err, bookResults) => {
+        if (err) {
+          console.error("Error al obtener el libro agregado:", err);
+          return res
+            .status(500)
+            .json({ error: "Error al obtener el libro agregado" });
+        }
+        res.status(201).json(bookResults[0]);
+      }
+    );
   });
 };
 
