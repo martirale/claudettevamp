@@ -13,9 +13,9 @@ export async function generateMetadata({ params }) {
     return {
       title: "Libro no encontrado",
       description: "El libro solicitado no se pudo encontrar.",
-      url: "https://claudettevamp.com/libros/no-encontrado",
+      url: "https://claudettevamp.com/libro/no-encontrado",
       image: "https://claudettevamp.com/no-cover.webp",
-      canonical: "https://claudettevamp.com/libros/no-encontrado",
+      canonical: "https://claudettevamp.com/libro/no-encontrado",
     };
   }
 
