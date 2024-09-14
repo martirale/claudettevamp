@@ -82,7 +82,7 @@ export default async function CharacterPage({ params }) {
             Datos curiosos
           </h3>
 
-          <p>{character.curiosity}</p>
+          {formatText(character.curiosity)}
         </div>
 
         {/* SIDEBAR */}
