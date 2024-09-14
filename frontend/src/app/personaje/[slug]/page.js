@@ -1,4 +1,5 @@
 import { getMetadata } from "@/lib/getMetadata";
+import { formatText } from "@/lib/formatText";
 import BoxCard from "@/components/ui/BoxCard";
 import HexagonCard from "@/components/hexagon/HexagonCard";
 import DividerLogo from "@/components/ui/DividerLogo";
@@ -53,7 +54,7 @@ export default async function CharacterPage({ params }) {
             {character.name}
           </h2>
 
-          <p>{character.description}</p>
+          <div className="mb-12">{formatText(character.description)}</div>
 
           <DividerLogo className="py-12" />
 

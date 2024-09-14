@@ -1,4 +1,5 @@
 import { getMetadata } from "@/lib/getMetadata";
+import { formatText } from "@/lib/formatText";
 import { formatDate } from "@/lib/formatDate";
 import Image from "next/image";
 import Link from "next/link";
@@ -80,7 +81,7 @@ export default async function BookPage({ params }) {
             <h2 className="font-LeMurmure text-scarlet text-6xl md:text-7xl mb-48 md:mb-32">
               {book.title}
             </h2>
-            <p className="mb-12">{book.synopsis}</p>
+            <div className="mb-12">{formatText(book.synopsis)}</div>
 
             <h3 className="font-LeMurmure text-scarlet text-2xl">
               Información del libro
