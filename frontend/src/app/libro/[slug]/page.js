@@ -6,7 +6,14 @@ import Link from "next/link";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
-  const res = await fetch(`http://localhost:3010/books/${slug}`, {
+  const apiSecretKey = process.env.NEXT_PUBLIC_API_SECRET_KEY;
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books/${slug}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "X-API-Key": apiSecretKey,
+    },
     cache: "no-store",
   });
 
@@ -34,7 +41,14 @@ export async function generateMetadata({ params }) {
 
 export default async function BookPage({ params }) {
   const { slug } = params;
-  const res = await fetch(`http://localhost:3010/books/${slug}`, {
+  const apiSecretKey = process.env.NEXT_PUBLIC_API_SECRET_KEY;
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books/${slug}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "X-API-Key": apiSecretKey,
+    },
     cache: "no-store",
   });
 

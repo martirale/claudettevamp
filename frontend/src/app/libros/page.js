@@ -13,13 +13,21 @@ export const metadata = getMetadata({
 });
 
 async function fetchAllBooks() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books`, {
+  const apiSecretKey = process.env.NEXT_PUBLIC_API_SECRET_KEY;
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "X-API-Key": apiSecretKey,
+    },
     cache: "no-store",
   });
-  if (!response.ok) {
+
+  if (!res.ok) {
     throw new Error("Error al obtener los libros");
   }
-  return response.json();
+  return res.json();
 }
 
 export default async function Universe() {

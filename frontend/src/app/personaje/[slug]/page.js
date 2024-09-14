@@ -6,9 +6,19 @@ import DividerLogo from "@/components/ui/DividerLogo";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
-  const res = await fetch(`http://localhost:3010/characters/${slug}`, {
-    cache: "no-store",
-  });
+  const apiSecretKey = process.env.NEXT_PUBLIC_API_SECRET_KEY;
+
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/characters/${slug}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "X-API-Key": apiSecretKey,
+      },
+      cache: "no-store",
+    }
+  );
 
   if (!res.ok) {
     return {
@@ -34,9 +44,19 @@ export async function generateMetadata({ params }) {
 
 export default async function CharacterPage({ params }) {
   const { slug } = params;
-  const res = await fetch(`http://localhost:3010/characters/${slug}`, {
-    cache: "no-store",
-  });
+  const apiSecretKey = process.env.NEXT_PUBLIC_API_SECRET_KEY;
+
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/characters/${slug}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "X-API-Key": apiSecretKey,
+      },
+      cache: "no-store",
+    }
+  );
 
   if (!res.ok) {
     return <div>Personaje no encontrado</div>;
