@@ -101,30 +101,42 @@ export default async function BookPage({ params }) {
               Información del libro
             </h3>
             <ul className="grid grid-cols-2 gap-2 my-4">
-              <li>
-                <span className="font-bold">Páginas:</span>
-                <br className="block md:hidden" /> {book.pages}
-              </li>
-              <li>
-                <span className="font-bold">Publicación:</span>
-                <br className="block md:hidden" /> {formatDate(book.publish)}
-              </li>
-              <li>
-                <span className="font-bold">Editorial:</span>
-                <br className="block md:hidden" /> {book.editorial}
-              </li>
-              <li>
-                <span className="font-bold">ISBN:</span>
-                <br className="block md:hidden" /> {book.isbn}
-              </li>
-              <li>
-                <span className="font-bold">Género:</span>
-                <br className="block md:hidden" /> {book.genre}
-              </li>
-              <li>
-                <span className="font-bold">Formato:</span>
-                <br className="block md:hidden" /> {book.format}
-              </li>
+              {book.pages && (
+                <li>
+                  <span className="font-bold">Páginas:</span>
+                  <br className="block md:hidden" /> {book.pages}
+                </li>
+              )}
+              {book.publish && (
+                <li>
+                  <span className="font-bold">Publicación:</span>
+                  <br className="block md:hidden" /> {formatDate(book.publish)}
+                </li>
+              )}
+              {book.editorial && (
+                <li>
+                  <span className="font-bold">Editorial:</span>
+                  <br className="block md:hidden" /> {book.editorial}
+                </li>
+              )}
+              {book.isbn && (
+                <li>
+                  <span className="font-bold">ISBN:</span>
+                  <br className="block md:hidden" /> {book.isbn}
+                </li>
+              )}
+              {book.genre && (
+                <li>
+                  <span className="font-bold">Género:</span>
+                  <br className="block md:hidden" /> {book.genre}
+                </li>
+              )}
+              {book.format && (
+                <li>
+                  <span className="font-bold">Formato:</span>
+                  <br className="block md:hidden" /> {book.format}
+                </li>
+              )}
             </ul>
           </div>
 

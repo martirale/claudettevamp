@@ -101,35 +101,52 @@ export default async function CharacterPage({ params }) {
                 {character.name_original}
               </h3>
               <ul>
-                <li className="mb-2">
-                  <span className="font-bold">Otros nombres:</span>{" "}
-                  {character.name_others}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Nacimiento:</span>{" "}
-                  {character.birth}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Muerte:</span> {character.death}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Familiares:</span>{" "}
-                  {character.family}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Clan:</span> {character.clan}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Afiliaciones:</span>{" "}
-                  {character.affiliations}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Estado civil:</span>{" "}
-                  {character.relationship}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Pareja:</span> {character.couple}
-                </li>
+                {character.name_others && (
+                  <li className="mb-2">
+                    <span className="font-bold">Otros nombres:</span>{" "}
+                    {character.name_others}
+                  </li>
+                )}
+                {character.birth && (
+                  <li className="mb-2">
+                    <span className="font-bold">Nacimiento:</span>{" "}
+                    {character.birth}
+                  </li>
+                )}
+                {character.death && (
+                  <li className="mb-2">
+                    <span className="font-bold">Muerte:</span> {character.death}
+                  </li>
+                )}
+                {character.family && (
+                  <li className="mb-2">
+                    <span className="font-bold">Familiares:</span>{" "}
+                    {character.family}
+                  </li>
+                )}
+                {character.clan && (
+                  <li className="mb-2">
+                    <span className="font-bold">Clan:</span> {character.clan}
+                  </li>
+                )}
+                {character.affiliations && (
+                  <li className="mb-2">
+                    <span className="font-bold">Afiliaciones:</span>{" "}
+                    {character.affiliations}
+                  </li>
+                )}
+                {character.relationship && (
+                  <li className="mb-2">
+                    <span className="font-bold">Estado civil:</span>{" "}
+                    {character.relationship}
+                  </li>
+                )}
+                {character.couple && (
+                  <li className="mb-2">
+                    <span className="font-bold">Pareja:</span>{" "}
+                    {character.couple}
+                  </li>
+                )}
               </ul>
 
               <DividerLogo className="py-4" />
@@ -138,29 +155,44 @@ export default async function CharacterPage({ params }) {
                 Información descriptiva
               </h3>
               <ul>
-                <li className="mb-2">
-                  <span className="font-bold">Especie:</span>{" "}
-                  {character.species}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Género:</span> {character.gender}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Estatura:</span>{" "}
-                  {character.stature}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Peso:</span> {character.weight}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Ojos:</span> {character.eyes}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Cabello:</span> {character.hair}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Tez:</span> {character.skin}
-                </li>
+                {character.species && (
+                  <li className="mb-2">
+                    <span className="font-bold">Especie:</span>{" "}
+                    {character.species}
+                  </li>
+                )}
+                {character.gender && (
+                  <li className="mb-2">
+                    <span className="font-bold">Género:</span>{" "}
+                    {character.gender}
+                  </li>
+                )}
+                {character.stature && (
+                  <li className="mb-2">
+                    <span className="font-bold">Estatura:</span>{" "}
+                    {character.stature}
+                  </li>
+                )}
+                {character.weight && (
+                  <li className="mb-2">
+                    <span className="font-bold">Peso:</span> {character.weight}
+                  </li>
+                )}
+                {character.eyes && (
+                  <li className="mb-2">
+                    <span className="font-bold">Ojos:</span> {character.eyes}
+                  </li>
+                )}
+                {character.hair && (
+                  <li className="mb-2">
+                    <span className="font-bold">Cabello:</span> {character.hair}
+                  </li>
+                )}
+                {character.skin && (
+                  <li className="mb-2">
+                    <span className="font-bold">Tez:</span> {character.skin}
+                  </li>
+                )}
               </ul>
 
               <DividerLogo className="py-4" />
@@ -169,18 +201,24 @@ export default async function CharacterPage({ params }) {
                 Otros datos
               </h3>
               <ul>
-                <li className="mb-2">
-                  <span className="font-bold">Ocupación:</span>{" "}
-                  {character.occupation}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Armamento:</span>{" "}
-                  {character.weapon}
-                </li>
-                <li className="mb-2">
-                  <span className="font-bold">Primera aparición:</span>{" "}
-                  {character.appearance}
-                </li>
+                {character.occupation && (
+                  <li className="mb-2">
+                    <span className="font-bold">Ocupación:</span>{" "}
+                    {character.occupation}
+                  </li>
+                )}
+                {character.weapon && (
+                  <li className="mb-2">
+                    <span className="font-bold">Armamento:</span>{" "}
+                    {character.weapon}
+                  </li>
+                )}
+                {character.appearance && (
+                  <li className="mb-2">
+                    <span className="font-bold">Primera aparición:</span>{" "}
+                    {character.appearance}
+                  </li>
+                )}
               </ul>
             </BoxCard>
           </div>
