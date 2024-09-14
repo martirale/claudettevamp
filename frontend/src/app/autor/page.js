@@ -56,7 +56,7 @@ export default function Author() {
 
             <DividerLogo className="py-4" />
 
-            <h3 className="font-LeMurmure text-scarlet text-xl mb-3">
+            <h3 className="font-LeMurmure text-scarlet text-2xl mb-3">
               Contacto
             </h3>
             <ul>

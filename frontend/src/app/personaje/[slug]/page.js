@@ -76,7 +76,7 @@ export default async function CharacterPage({ params }) {
 
               <DividerLogo className="py-4" />
 
-              <h3 className="font-LeMurmure text-scarlet text-xl mb-3">
+              <h3 className="font-LeMurmure text-scarlet text-2xl mb-3">
                 {character.name_original}
               </h3>
               <ul>
@@ -110,7 +110,7 @@ export default async function CharacterPage({ params }) {
 
               <DividerLogo className="py-4" />
 
-              <h3 className="font-LeMurmure text-scarlet text-xl mb-3">
+              <h3 className="font-LeMurmure text-scarlet text-2xl mb-3">
                 Información descriptiva
               </h3>
               <ul>
@@ -141,7 +141,7 @@ export default async function CharacterPage({ params }) {
 
               <DividerLogo className="py-4" />
 
-              <h3 className="font-LeMurmure text-scarlet text-xl mb-3">
+              <h3 className="font-LeMurmure text-scarlet text-2xl mb-3">
                 Otros datos
               </h3>
               <ul>
