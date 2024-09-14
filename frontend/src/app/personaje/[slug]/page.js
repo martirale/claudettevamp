@@ -74,7 +74,11 @@ export default async function CharacterPage({ params }) {
             {character.name}
           </h2>
 
-          <div className="mb-12">{formatText(character.description)}</div>
+          {character.description &&
+            character.description !== "NULL" &&
+            character.description !== "" && (
+              <div className="mb-12">{formatText(character.description)}</div>
+            )}
 
           <DividerLogo className="py-12" />
 
@@ -82,7 +86,11 @@ export default async function CharacterPage({ params }) {
             Datos curiosos
           </h3>
 
-          {formatText(character.curiosity)}
+          {character.curiosity &&
+            character.curiosity !== "NULL" &&
+            character.curiosity !== "" && (
+              <div>{formatText(character.curiosity)}</div>
+            )}
         </div>
 
         {/* SIDEBAR */}
@@ -101,52 +109,69 @@ export default async function CharacterPage({ params }) {
                 {character.name_original}
               </h3>
               <ul>
-                {character.name_others && (
-                  <li className="mb-2">
-                    <span className="font-bold">Otros nombres:</span>{" "}
-                    {character.name_others}
-                  </li>
-                )}
-                {character.birth && (
-                  <li className="mb-2">
-                    <span className="font-bold">Nacimiento:</span>{" "}
-                    {character.birth}
-                  </li>
-                )}
-                {character.death && (
-                  <li className="mb-2">
-                    <span className="font-bold">Muerte:</span> {character.death}
-                  </li>
-                )}
-                {character.family && (
-                  <li className="mb-2">
-                    <span className="font-bold">Familiares:</span>{" "}
-                    {character.family}
-                  </li>
-                )}
-                {character.clan && (
-                  <li className="mb-2">
-                    <span className="font-bold">Clan:</span> {character.clan}
-                  </li>
-                )}
-                {character.affiliations && (
-                  <li className="mb-2">
-                    <span className="font-bold">Afiliaciones:</span>{" "}
-                    {character.affiliations}
-                  </li>
-                )}
-                {character.relationship && (
-                  <li className="mb-2">
-                    <span className="font-bold">Estado civil:</span>{" "}
-                    {character.relationship}
-                  </li>
-                )}
-                {character.couple && (
-                  <li className="mb-2">
-                    <span className="font-bold">Pareja:</span>{" "}
-                    {character.couple}
-                  </li>
-                )}
+                {character.name_others &&
+                  character.name_others !== "NULL" &&
+                  character.name_others !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Otros nombres:</span>{" "}
+                      {character.name_others}
+                    </li>
+                  )}
+                {character.birth &&
+                  character.birth !== "NULL" &&
+                  character.birth !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Nacimiento:</span>{" "}
+                      {character.birth}
+                    </li>
+                  )}
+                {character.death &&
+                  character.death !== "NULL" &&
+                  character.death !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Muerte:</span>{" "}
+                      {character.death}
+                    </li>
+                  )}
+                {character.family &&
+                  character.family !== "NULL" &&
+                  character.family !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Familiares:</span>{" "}
+                      {character.family}
+                    </li>
+                  )}
+                {character.clan &&
+                  character.clan !== "NULL" &&
+                  character.clan !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Clan:</span> {character.clan}
+                    </li>
+                  )}
+                {character.affiliations &&
+                  character.affiliations !== "NULL" &&
+                  character.affiliations !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Afiliaciones:</span>{" "}
+                      {character.affiliations}
+                    </li>
+                  )}
+                {character.relationship &&
+                  character.relationship !== "NULL" &&
+                  character.relationship !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Estado civil:</span>{" "}
+                      {character.relationship}
+                    </li>
+                  )}
+                {character.couple &&
+                  character.couple !== "NULL" &&
+                  character.couple !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Pareja:</span>{" "}
+                      {character.couple}
+                    </li>
+                  )}
               </ul>
 
               <DividerLogo className="py-4" />
@@ -155,44 +180,60 @@ export default async function CharacterPage({ params }) {
                 Información descriptiva
               </h3>
               <ul>
-                {character.species && (
-                  <li className="mb-2">
-                    <span className="font-bold">Especie:</span>{" "}
-                    {character.species}
-                  </li>
-                )}
-                {character.gender && (
-                  <li className="mb-2">
-                    <span className="font-bold">Género:</span>{" "}
-                    {character.gender}
-                  </li>
-                )}
-                {character.stature && (
-                  <li className="mb-2">
-                    <span className="font-bold">Estatura:</span>{" "}
-                    {character.stature}
-                  </li>
-                )}
-                {character.weight && (
-                  <li className="mb-2">
-                    <span className="font-bold">Peso:</span> {character.weight}
-                  </li>
-                )}
-                {character.eyes && (
-                  <li className="mb-2">
-                    <span className="font-bold">Ojos:</span> {character.eyes}
-                  </li>
-                )}
-                {character.hair && (
-                  <li className="mb-2">
-                    <span className="font-bold">Cabello:</span> {character.hair}
-                  </li>
-                )}
-                {character.skin && (
-                  <li className="mb-2">
-                    <span className="font-bold">Tez:</span> {character.skin}
-                  </li>
-                )}
+                {character.species &&
+                  character.species !== "NULL" &&
+                  character.species !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Especie:</span>{" "}
+                      {character.species}
+                    </li>
+                  )}
+                {character.gender &&
+                  character.gender !== "NULL" &&
+                  character.gender !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Género:</span>{" "}
+                      {character.gender}
+                    </li>
+                  )}
+                {character.stature &&
+                  character.stature !== "NULL" &&
+                  character.stature !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Estatura:</span>{" "}
+                      {character.stature}
+                    </li>
+                  )}
+                {character.weight &&
+                  character.weight !== "NULL" &&
+                  character.weight !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Peso:</span>{" "}
+                      {character.weight}
+                    </li>
+                  )}
+                {character.eyes &&
+                  character.eyes !== "NULL" &&
+                  character.eyes !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Ojos:</span> {character.eyes}
+                    </li>
+                  )}
+                {character.hair &&
+                  character.hair !== "NULL" &&
+                  character.hair !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Cabello:</span>{" "}
+                      {character.hair}
+                    </li>
+                  )}
+                {character.skin &&
+                  character.skin !== "NULL" &&
+                  character.skin !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Tez:</span> {character.skin}
+                    </li>
+                  )}
               </ul>
 
               <DividerLogo className="py-4" />
@@ -201,24 +242,30 @@ export default async function CharacterPage({ params }) {
                 Otros datos
               </h3>
               <ul>
-                {character.occupation && (
-                  <li className="mb-2">
-                    <span className="font-bold">Ocupación:</span>{" "}
-                    {character.occupation}
-                  </li>
-                )}
-                {character.weapon && (
-                  <li className="mb-2">
-                    <span className="font-bold">Armamento:</span>{" "}
-                    {character.weapon}
-                  </li>
-                )}
-                {character.appearance && (
-                  <li className="mb-2">
-                    <span className="font-bold">Primera aparición:</span>{" "}
-                    {character.appearance}
-                  </li>
-                )}
+                {character.occupation &&
+                  character.occupation !== "NULL" &&
+                  character.occupation !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Ocupación:</span>{" "}
+                      {character.occupation}
+                    </li>
+                  )}
+                {character.weapon &&
+                  character.weapon !== "NULL" &&
+                  character.weapon !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Armamento:</span>{" "}
+                      {character.weapon}
+                    </li>
+                  )}
+                {character.appearance &&
+                  character.appearance !== "NULL" &&
+                  character.appearance !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Primera aparición:</span>{" "}
+                      {character.appearance}
+                    </li>
+                  )}
               </ul>
             </BoxCard>
           </div>

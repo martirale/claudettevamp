@@ -101,37 +101,42 @@ export default async function BookPage({ params }) {
               Información del libro
             </h3>
             <ul className="grid grid-cols-2 gap-2 my-4">
-              {book.pages && (
+              {book.pages && book.pages !== "NULL" && book.pages !== "" && (
                 <li>
                   <span className="font-bold">Páginas:</span>
                   <br className="block md:hidden" /> {book.pages}
                 </li>
               )}
-              {book.publish && (
-                <li>
-                  <span className="font-bold">Publicación:</span>
-                  <br className="block md:hidden" /> {formatDate(book.publish)}
-                </li>
-              )}
-              {book.editorial && (
-                <li>
-                  <span className="font-bold">Editorial:</span>
-                  <br className="block md:hidden" /> {book.editorial}
-                </li>
-              )}
-              {book.isbn && (
+              {book.publish &&
+                book.publish !== "NULL" &&
+                book.publish !== "" && (
+                  <li>
+                    <span className="font-bold">Publicación:</span>
+                    <br className="block md:hidden" />{" "}
+                    {formatDate(book.publish)}
+                  </li>
+                )}
+              {book.editorial &&
+                book.editorial !== "NULL" &&
+                book.editorial !== "" && (
+                  <li>
+                    <span className="font-bold">Editorial:</span>
+                    <br className="block md:hidden" /> {book.editorial}
+                  </li>
+                )}
+              {book.isbn && book.isbn !== "NULL" && book.isbn !== "" && (
                 <li>
                   <span className="font-bold">ISBN:</span>
                   <br className="block md:hidden" /> {book.isbn}
                 </li>
               )}
-              {book.genre && (
+              {book.genre && book.genre !== "NULL" && book.genre !== "" && (
                 <li>
                   <span className="font-bold">Género:</span>
                   <br className="block md:hidden" /> {book.genre}
                 </li>
               )}
-              {book.format && (
+              {book.format && book.format !== "NULL" && book.format !== "" && (
                 <li>
                   <span className="font-bold">Formato:</span>
                   <br className="block md:hidden" /> {book.format}
