@@ -8,7 +8,7 @@ export default function HeroBooks() {
     <section className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-4">
       <div className="col-span-12 md:col-span-6 flex justify-center">
         <Image
-          src="/books/claudette-caida-ascenso.png"
+          src="/books/claudette-caida-ascenso.webp"
           width="688"
           height="600"
           quality={100}
