@@ -70,7 +70,7 @@ const Header = () => {
   const renderMobileMenu = () => (
     <>
       <div className="flex-shrink-0">
-        <Link href="/inicio">
+        <Link href="/">
           <MonogramClaudette className="fill-scarlet w-[45px] h-[64px]" />
         </Link>
       </div>
