@@ -1,3 +1,4 @@
+import React from "react";
 import HeroBooks from "@/components/hero/HeroBooks";
 import UniverseSlideshow from "@/components/slideshow/UniverseSlideshow";
 import DividerLogo from "@/components/ui/DividerLogo";

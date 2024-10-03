@@ -1,3 +1,4 @@
+import React from "react";
 import "./globals.css";
 import { BarlowCond, LeMurmure } from "@/components/ui/CustomFonts";
 import { getMetadata } from "@/lib/getMetadata";

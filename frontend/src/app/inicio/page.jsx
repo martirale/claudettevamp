@@ -1,3 +1,4 @@
+import React from "react";
 import HeroWelcome from "@/components/hero/HeroWelcome";
 
 export default function Welcome() {

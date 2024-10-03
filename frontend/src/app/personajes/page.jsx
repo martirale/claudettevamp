@@ -1,3 +1,4 @@
+import React from "react";
 import { getMetadata } from "@/lib/getMetadata";
 import Link from "next/link";
 import DividerLogo from "@/components/ui/DividerLogo";

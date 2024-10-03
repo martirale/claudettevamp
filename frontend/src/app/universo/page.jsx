@@ -1,3 +1,4 @@
+import React from "react";
 import BoxCard from "@/components/ui/BoxCard";
 import DividerLogo from "@/components/ui/DividerLogo";
 import { getMetadata } from "@/lib/getMetadata";

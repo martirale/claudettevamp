@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import LogoCaidaAscenso from "../LogoCaidaAscenso";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";

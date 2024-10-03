@@ -1,3 +1,4 @@
+import React from "react";
 import StoresButtons from "../StoresButtons";
 import LogoCaidaAscenso from "../LogoCaidaAscenso";
 import Image from "next/image";

@@ -1,3 +1,4 @@
+import React from "react";
 import { getMetadata } from "@/lib/getMetadata";
 import { faSkull } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

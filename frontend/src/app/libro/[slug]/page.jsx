@@ -1,3 +1,4 @@
+import React from "react";
 import { getMetadata } from "@/lib/getMetadata";
 import { formatText } from "@/lib/formatText";
 import { formatDate } from "@/lib/formatDate";
