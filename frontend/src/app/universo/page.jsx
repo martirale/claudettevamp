@@ -125,7 +125,7 @@ export default function Universe() {
         <div className="col-span-12 md:col-span-4">
           <BoxCard className="mt-16 md:mt-5">
             <Image
-              src="/books/claudette-caida-ascenso.png"
+              src="/books/claudette-caida-ascenso.webp"
               width="688"
               height="600"
               quality={100}
