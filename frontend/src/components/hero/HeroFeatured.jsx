@@ -5,19 +5,9 @@ import Image from "next/image";
 
 export default function HeroFeatured() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-4">
-      <div className="col-span-12 md:col-span-6 flex justify-center">
-        <Image
-          src="/sample-h.png"
-          width="688"
-          height="600"
-          quality={100}
-          className="w-full h-auto"
-          alt="Lorem ipsum"
-        />
-      </div>
-
-      <div className="col-span-12 md:col-span-6 flex flex-col justify-center">
+    <section className="grid grid-cols-1">
+      <div className="flex justify-center text-center px-0 md:px-8 xl:px-16">
+        <h2 className="font-LeMurmure text-4xl md:text-5xl xl:text-6xl">"Una historia épica de amor, inmortalidad y venganza frente a un mal ancestral"</h2>
       </div>
     </section>
   );
