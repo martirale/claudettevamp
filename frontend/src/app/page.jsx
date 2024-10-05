@@ -1,5 +1,6 @@
 import React from "react";
 import HeroBooks from "@/components/hero/HeroBooks";
+import HeroFeatured from "@/components/hero/HeroFeatured";
 import UniverseSlideshow from "@/components/slideshow/UniverseSlideshow";
 import DividerLogo from "@/components/ui/DividerLogo";
 import { getMetadata } from "@/lib/getMetadata";
@@ -27,6 +28,9 @@ export default function Home() {
       {/* UNIVERSE SLIDESHOW */}
       <UniverseSlideshow />
       <DividerLogo className="py-16" />
+
+      {/* HERO FEATURED */}
+      <HeroFeatured />
     </div>
   );
 }
