@@ -60,7 +60,7 @@ export default async function AntagonistPage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {charactersAntago.map((character, index) => (
-                <Link key={index} href={`/personaje/${character.slug}`}>
+                <Link key={index} href={`/personajes/${character.slug}`}>
                   <HexagonCard
                     source={character.avatar}
                     alternative={character.name}

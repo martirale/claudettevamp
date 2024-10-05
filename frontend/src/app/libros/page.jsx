@@ -61,7 +61,7 @@ export default async function BooksPage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {booksCaida.map((book, index) => (
-                <Link key={index} href={`/libro/${book.slug}`}>
+                <Link key={index} href={`/libros/${book.slug}`}>
                   <Image
                     src={book.cover}
                     alt={book.title}
@@ -83,7 +83,7 @@ export default async function BooksPage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {booksRelatos.map((book, index) => (
-                <Link key={index} href={`/libro/${book.slug}`}>
+                <Link key={index} href={`/libros/${book.slug}`}>
                   <Image
                     src={book.cover}
                     alt={book.title}

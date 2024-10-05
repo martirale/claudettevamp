@@ -25,9 +25,9 @@ export async function generateMetadata({ params }) {
     return {
       title: "Facción no encontrada",
       description: "La facción solicitada no se pudo encontrar.",
-      url: "https://claudettevamp.com/faccion/no-encontrado",
+      url: "https://claudettevamp.com/facciones/no-encontrado",
       image: "https://claudettevamp.com/no-cover.webp",
-      canonical: "https://claudettevamp.com/faccion/no-encontrado",
+      canonical: "https://claudettevamp.com/facciones/no-encontrado",
     };
   }
 
@@ -37,13 +37,13 @@ export async function generateMetadata({ params }) {
     title: `${character.name} — Claudette Vamp`,
     description:
       "Claudette Vamp es una trilogía de novelas cortas de fantasía oscura y romance escritas por Alejandro Mártir.",
-    url: `https://claudettevamp.com/faccion/${character.slug}`,
+    url: `https://claudettevamp.com/facciones/${character.slug}`,
     image: `https://claudettevamp.com${character.avatar}`,
-    canonical: `https://claudettevamp.com/faccion/${character.slug}`,
+    canonical: `https://claudettevamp.com/facciones/${character.slug}`,
   });
 }
 
-export default async function CharacterPage({ params }) {
+export default async function FactionPage({ params }) {
   const { slug } = params;
   const apiSecretKey = process.env.NEXT_PUBLIC_API_SECRET_KEY;
 

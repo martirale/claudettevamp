@@ -60,7 +60,7 @@ export default async function ProtagonistPage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {charactersProtas.map((character, index) => (
-                <Link key={index} href={`/personaje/${character.slug}`}>
+                <Link key={index} href={`/personajes/${character.slug}`}>
                   <HexagonCard
                     source={character.avatar}
                     alternative={character.name}
