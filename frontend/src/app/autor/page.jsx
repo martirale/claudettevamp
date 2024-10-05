@@ -33,7 +33,7 @@ export default function Author() {
             que va creando en su cabeza a lo largo del día. De estas "películas"
             mentales surgió la idea que ahora es{" "}
             <Link
-              href="https://www.amazon.com/dp/B0BNZMWXYT"
+              href="https://www.amazon.com/dp/B0DJH23M5P"
               target="_blank"
               rel="noopener"
               className="text-scarlet hover:underline"
