@@ -8,7 +8,7 @@ const stores = [
     image: "/stores/amazon-com.svg",
     width: "150",
     height: "44",
-    url: "https://www.amazon.com/dp/B0BNZMWXYT",
+    url: "https://www.amazon.com/dp/B0DJH23M5P",
     target: "_blank",
   },
   {
