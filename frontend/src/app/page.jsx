@@ -25,12 +25,12 @@ export default function Home() {
       <HeroBooks />
       <DividerLogo className="py-16" />
 
-      {/* UNIVERSE SLIDESHOW */}
-      <UniverseSlideshow />
-      <DividerLogo className="py-16" />
-
       {/* HERO FEATURED */}
       <HeroFeatured />
+      <DividerLogo className="py-16" />
+
+      {/* UNIVERSE SLIDESHOW */}
+      <UniverseSlideshow />
     </div>
   );
 }
