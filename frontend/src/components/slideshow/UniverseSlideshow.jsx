@@ -60,7 +60,7 @@ const slides = [
 export default function UniverseSlideshow() {
   return (
     <div>
-      <h2 className="font-LeMurmure text-scarlet text-center text-3xl md:text-4xl mb-8">
+      <h2 className="font-LeMurmure text-scarlet text-center text-3xl mb-8">
         Descubre el universo de Claudette
       </h2>
 
