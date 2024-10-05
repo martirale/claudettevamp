@@ -41,12 +41,12 @@ const slides = [
     path: "antagonist",
   },
   {
-    url: "#",
+    url: "/facciones",
     title: "Facciones",
     path: "factions",
   },
   {
-    url: "#",
+    url: "/mitologia",
     title: "Mitología",
     path: "myth",
   },
