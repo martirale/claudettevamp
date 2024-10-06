@@ -59,14 +59,12 @@ const slides = [
 
 export default function UniverseSlideshow() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-12 gap-8">
-      <div className="col-span-12 md:col-span-3 flex flex-col justify-center">
-      <h2 className="font-LeMurmure text-scarlet text-center text-2xl md:text-left md:text-4xl 2xl:text-5xl">
+    <div>
+      <h2 className="font-LeMurmure text-scarlet text-center text-2xl md:text-3xl mb-8">
         Descubre más del universo de Claudette Vamp
       </h2>
-      </div>
 
-      <div className="col-span-12 md:col-span-9 flex justify-center"><Swiper
+      <Swiper
         modules={[Autoplay]}
         spaceBetween={0}
         slidesPerView={1}
@@ -75,7 +73,7 @@ export default function UniverseSlideshow() {
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         breakpoints={{
           640: {
-            slidesPerView: 3,
+            slidesPerView: 4,
           },
         }}
         className={styles.swiper}
@@ -113,7 +111,7 @@ export default function UniverseSlideshow() {
             </div>
           </SwiperSlide>
         ))}
-      </Swiper></div>
-    </section>
+      </Swiper>
+    </div>
   );
 }
