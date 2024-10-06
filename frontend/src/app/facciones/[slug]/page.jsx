@@ -10,7 +10,7 @@ export async function generateMetadata({ params }) {
   const apiSecretKey = process.env.NEXT_PUBLIC_API_SECRET_KEY;
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/characters/${slug}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/factions/${slug}`,
     {
       method: "GET",
       headers: {
@@ -31,15 +31,15 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const character = await res.json();
+  const faction = await res.json();
 
   return getMetadata({
-    title: `${character.name} — Claudette Vamp`,
+    title: `${faction.name} — Claudette Vamp`,
     description:
       "Claudette Vamp es una trilogía de novelas cortas de fantasía oscura y romance escritas por Alejandro Mártir.",
-    url: `https://claudettevamp.com/facciones/${character.slug}`,
-    image: `https://claudettevamp.com${character.avatar}`,
-    canonical: `https://claudettevamp.com/facciones/${character.slug}`,
+    url: `https://claudettevamp.com/facciones/${faction.slug}`,
+    image: `https://claudettevamp.com${faction.avatar}`,
+    canonical: `https://claudettevamp.com/facciones/${faction.slug}`,
   });
 }
 
@@ -48,7 +48,7 @@ export default async function FactionPage({ params }) {
   const apiSecretKey = process.env.NEXT_PUBLIC_API_SECRET_KEY;
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/characters/${slug}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/factions/${slug}`,
     {
       method: "GET",
       headers: {
@@ -63,34 +63,34 @@ export default async function FactionPage({ params }) {
     return <div>Facción no encontrada</div>;
   }
 
-  const character = await res.json();
+  const faction = await res.json();
 
   return (
     <div>
-      <h1>{character.name}</h1>
+      <h1>{faction.name}</h1>
 
       <section className="grid grid-cols-1 md:grid-cols-12 gap-8">
         <div className="col-span-12 md:col-span-8">
           <h2 className="font-LeMurmure text-scarlet text-6xl md:text-7xl mb-48 md:mb-32">
-            {character.name}
+            {faction.name}
           </h2>
 
-          {character.description &&
-            character.description !== "NULL" &&
-            character.description !== "" && (
-              <div className="mb-12">{formatText(character.description)}</div>
+          {faction.description &&
+            faction.description !== "NULL" &&
+            faction.description !== "" && (
+              <div className="mb-12">{formatText(faction.description)}</div>
             )}
 
           <DividerLogo className="py-12" />
 
           <h3 className="font-LeMurmure text-scarlet text-3xl mb-4">
-            Datos curiosos
+            Otros datos y curiosidades
           </h3>
 
-          {character.curiosity &&
-            character.curiosity !== "NULL" &&
-            character.curiosity !== "" && (
-              <div>{formatText(character.curiosity)}</div>
+          {faction.curiosity &&
+            faction.curiosity !== "NULL" &&
+            faction.curiosity !== "" && (
+              <div>{formatText(faction.curiosity)}</div>
             )}
         </div>
 
@@ -99,7 +99,7 @@ export default async function FactionPage({ params }) {
           <div className="relative w-full mt-16 md:mt-5">
             <BoxCard className="mt-16 md:mt-5">
               <HexagonCard
-                source={character.avatar}
+                source={faction.avatar}
                 alternative="alejandro-martir"
                 className="mb-5"
               />
@@ -107,132 +107,99 @@ export default async function FactionPage({ params }) {
               <DividerLogo className="py-4" />
 
               <h3 className="font-LeMurmure text-scarlet text-2xl mb-3">
-                {character.name_original}
+                Datos generales
               </h3>
               <ul>
-                {character.name_others &&
-                  character.name_others !== "NULL" &&
-                  character.name_others !== "" && (
+                {faction.name &&
+                  faction.name !== "NULL" &&
+                  faction.name !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Otros nombres:</span>{" "}
-                      {character.name_others}
+                      <span className="font-bold">Nombre:</span> {faction.name}
                     </li>
                   )}
-                {character.birth &&
-                  character.birth !== "NULL" &&
-                  character.birth !== "" && (
+                {faction.leader &&
+                  faction.leader !== "NULL" &&
+                  faction.leader !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Nacimiento:</span>{" "}
-                      {character.birth}
+                      <span className="font-bold">Líder:</span> {faction.leader}
                     </li>
                   )}
-                {character.death &&
-                  character.death !== "NULL" &&
-                  character.death !== "" && (
+                {faction.alpha &&
+                  faction.alpha !== "NULL" &&
+                  faction.alpha !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Muerte:</span>{" "}
-                      {character.death}
+                      <span className="font-bold">Alfa:</span> {faction.alpha}
                     </li>
                   )}
-                {character.family &&
-                  character.family !== "NULL" &&
-                  character.family !== "" && (
+                {faction.great &&
+                  faction.great !== "NULL" &&
+                  faction.great !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Familiares:</span>{" "}
-                      {character.family}
+                      <span className="font-bold">Gran Brujo:</span>{" "}
+                      {faction.great}
                     </li>
                   )}
-                {character.clan &&
-                  character.clan !== "NULL" &&
-                  character.clan !== "" && (
+                {faction.predecessor &&
+                  faction.predecessor !== "NULL" &&
+                  faction.predecessor !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Clan:</span> {character.clan}
+                      <span className="font-bold">Líder anterior:</span>{" "}
+                      {faction.predecessor}
                     </li>
                   )}
-                {character.affiliations &&
-                  character.affiliations !== "NULL" &&
-                  character.affiliations !== "" && (
+                {faction.foundation &&
+                  faction.foundation !== "NULL" &&
+                  faction.foundation !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Afiliaciones:</span>{" "}
-                      {character.affiliations}
+                      <span className="font-bold">Fundación:</span>{" "}
+                      {faction.foundation}
                     </li>
                   )}
-                {character.relationship &&
-                  character.relationship !== "NULL" &&
-                  character.relationship !== "" && (
+                {faction.founder &&
+                  faction.founder !== "NULL" &&
+                  faction.founder !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Estado civil:</span>{" "}
-                      {character.relationship}
+                      <span className="font-bold">Fundador:</span>{" "}
+                      {faction.founder}
                     </li>
                   )}
-                {character.couple &&
-                  character.couple !== "NULL" &&
-                  character.couple !== "" && (
+                {faction.status &&
+                  faction.status !== "NULL" &&
+                  faction.status !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Pareja:</span>{" "}
-                      {character.couple}
+                      <span className="font-bold">Estado:</span>{" "}
+                      {faction.status}
                     </li>
                   )}
-              </ul>
-
-              <DividerLogo className="py-4" />
-
-              <h3 className="font-LeMurmure text-scarlet text-2xl mb-3">
-                Información descriptiva
-              </h3>
-              <ul>
-                {character.species &&
-                  character.species !== "NULL" &&
-                  character.species !== "" && (
+                {faction.location &&
+                  faction.location !== "NULL" &&
+                  faction.location !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Localización:</span>{" "}
+                      {faction.location}
+                    </li>
+                  )}
+                {faction.specie &&
+                  faction.specie !== "NULL" &&
+                  faction.specie !== "" && (
                     <li className="mb-2">
                       <span className="font-bold">Especie:</span>{" "}
-                      {character.species}
+                      {faction.specie}
                     </li>
                   )}
-                {character.gender &&
-                  character.gender !== "NULL" &&
-                  character.gender !== "" && (
+                {faction.class &&
+                  faction.class !== "NULL" &&
+                  faction.class !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Género:</span>{" "}
-                      {character.gender}
+                      <span className="font-bold">Clase:</span> {faction.class}
                     </li>
                   )}
-                {character.stature &&
-                  character.stature !== "NULL" &&
-                  character.stature !== "" && (
+                {faction.purpose &&
+                  faction.purpose !== "NULL" &&
+                  faction.purpose !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Estatura:</span>{" "}
-                      {character.stature}
-                    </li>
-                  )}
-                {character.weight &&
-                  character.weight !== "NULL" &&
-                  character.weight !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Peso:</span>{" "}
-                      {character.weight}
-                    </li>
-                  )}
-                {character.eyes &&
-                  character.eyes !== "NULL" &&
-                  character.eyes !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Ojos:</span> {character.eyes}
-                    </li>
-                  )}
-                {character.hair &&
-                  character.hair !== "NULL" &&
-                  character.hair !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Cabello:</span>{" "}
-                      {character.hair}
-                    </li>
-                  )}
-                {character.skin &&
-                  character.skin !== "NULL" &&
-                  character.skin !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Tez:</span> {character.skin}
+                      <span className="font-bold">Propósito:</span>{" "}
+                      {faction.purpose}
                     </li>
                   )}
               </ul>
@@ -240,31 +207,71 @@ export default async function FactionPage({ params }) {
               <DividerLogo className="py-4" />
 
               <h3 className="font-LeMurmure text-scarlet text-2xl mb-3">
-                Otros datos
+                Membresía y relaciones
               </h3>
               <ul>
-                {character.occupation &&
-                  character.occupation !== "NULL" &&
-                  character.occupation !== "" && (
+                {faction.populate &&
+                  faction.populate !== "NULL" &&
+                  faction.populate !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Ocupación:</span>{" "}
-                      {character.occupation}
+                      <span className="font-bold">Población:</span>{" "}
+                      {faction.populate}
                     </li>
                   )}
-                {character.weapon &&
-                  character.weapon !== "NULL" &&
-                  character.weapon !== "" && (
+                {faction.members &&
+                  faction.members !== "NULL" &&
+                  faction.members !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Armamento:</span>{" "}
-                      {character.weapon}
+                      <span className="font-bold">Miembros:</span>{" "}
+                      {faction.members}
                     </li>
                   )}
-                {character.appearance &&
-                  character.appearance !== "NULL" &&
-                  character.appearance !== "" && (
+                {faction.members_featured &&
+                  faction.members_featured !== "NULL" &&
+                  faction.members_featured !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Primera aparición:</span>{" "}
-                      {character.appearance}
+                      <span className="font-bold">Miembros destacados:</span>{" "}
+                      {faction.members_featured}
+                    </li>
+                  )}
+                {faction.members_others &&
+                  faction.members_others !== "NULL" &&
+                  faction.members_others !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Otros miembros:</span>{" "}
+                      {faction.members_others}
+                    </li>
+                  )}
+                {faction.members_papa &&
+                  faction.members_papa !== "NULL" &&
+                  faction.members_papa !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Papas destacados:</span>{" "}
+                      {faction.members_papa}
+                    </li>
+                  )}
+                {faction.members_paladin &&
+                  faction.members_paladin !== "NULL" &&
+                  faction.members_paladin !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Paladines destacados:</span>{" "}
+                      {faction.members_paladin}
+                    </li>
+                  )}
+                {faction.affiliations &&
+                  faction.affiliations !== "NULL" &&
+                  faction.affiliations !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Afiliaciones:</span>{" "}
+                      {faction.affiliations}
+                    </li>
+                  )}
+                {faction.enemies &&
+                  faction.enemies !== "NULL" &&
+                  faction.enemies !== "" && (
+                    <li className="mb-2">
+                      <span className="font-bold">Enemigos:</span>{" "}
+                      {faction.enemies}
                     </li>
                   )}
               </ul>
