@@ -45,6 +45,34 @@ const tales = [
   },
 ];
 
+const buttons = [
+  {
+    id: "1",
+    title: "Libros",
+    url: "/libros",
+  },
+  {
+    id: "2",
+    title: "Protagonistas",
+    url: "/protagonistas",
+  },
+  {
+    id: "3",
+    title: "Antagonistas",
+    url: "/antagonistas",
+  },
+  {
+    id: "4",
+    title: "Facciones",
+    url: "/facciones",
+  },
+  {
+    id: "5",
+    title: "Especies",
+    url: "/especies",
+  },
+];
+
 export default function Universe() {
   return (
     <div>
@@ -119,6 +147,20 @@ export default function Universe() {
             </Link>{" "}
             que expanden el universo.
           </p>
+
+          <div className="grid text-center gap-4 md:grid-cols-3 mt-12">
+            {buttons.map((button) =>
+              button.url ? (
+                <Link
+                  key={button.id}
+                  href={button.url}
+                  className="px-2 py-4 border border-darkGrey transition-colors hover:border-scarlet flex items-center justify-center"
+                >
+                  <span className="font-LeMurmure text-xl uppercase">{button.title}</span>
+                </Link>
+              ) : null
+            )}
+          </div>
         </div>
 
         {/* SIDEBAR */}
