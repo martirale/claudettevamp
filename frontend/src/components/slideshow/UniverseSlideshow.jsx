@@ -46,8 +46,8 @@ const slides = [
     path: "factions",
   },
   {
-    url: "/mitologia",
-    title: "Mitología",
+    url: "/especies",
+    title: "Especies",
     path: "myth",
   },
   {
