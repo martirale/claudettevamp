@@ -13,10 +13,10 @@ export const metadata = getMetadata({
   canonical: "https://claudettevamp.com/facciones",
 });
 
-async function fetchAllCharacters() {
+async function fetchAllFactions() {
   const apiSecretKey = process.env.NEXT_PUBLIC_API_SECRET_KEY;
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/characters`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/factions`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -26,24 +26,28 @@ async function fetchAllCharacters() {
   });
 
   if (!res.ok) {
-    throw new Error("Error al obtener los personajes");
+    throw new Error("Error al obtener las facciones");
   }
   return res.json();
 }
 
 export default async function FactionsPage() {
-  let characters = [];
+  let factions = [];
 
   try {
-    characters = await fetchAllCharacters();
+    factions = await fetchAllFactions();
   } catch (error) {
     console.error(error);
   }
 
-  // Filtrar personajes por tipo
-  const charactersProtas = characters.filter(
-    (character) => character.type === "Protagonista"
+  // Filtrar facciones por tipo
+  const factionsVampires = factions.filter(
+    (faction) => faction.type === "vampiro"
   );
+  const factionsNephilim = factions.filter(
+    (faction) => faction.type === "nephilim"
+  );
+  const factionsOthers = factions.filter((faction) => faction.type === "otro");
 
   return (
     <div>
@@ -51,21 +55,61 @@ export default async function FactionsPage() {
 
       <section className="grid grid-cols-1 md:grid-cols-12">
         <div className="col-span-12">
-          <div>
+          <div className="mb-32">
             <h2 className="font-LeMurmure text-scarlet text-center text-6xl md:text-7xl">
-              Facciones
+              Vampiros
             </h2>
 
             <DividerLogo className="my-8" />
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-              {charactersProtas.map((character, index) => (
-                <Link key={index} href={`/personaje/${character.slug}`}>
+              {factionsVampires.map((faction, index) => (
+                <Link key={index} href={`/facciones/${faction.slug}`}>
                   <HexagonCard
-                    source={character.avatar}
-                    alternative={character.name}
+                    source={faction.avatar}
+                    alternative={faction.name}
                   />
-                  <h4 className="text-center my-4">{character.name}</h4>
+                  <h4 className="text-center my-4">{faction.name}</h4>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-32">
+            <h2 className="font-LeMurmure text-scarlet text-center text-6xl md:text-7xl">
+              Nephilim
+            </h2>
+
+            <DividerLogo className="my-8" />
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+              {factionsNephilim.map((faction, index) => (
+                <Link key={index} href={`/facciones/${faction.slug}`}>
+                  <HexagonCard
+                    source={faction.avatar}
+                    alternative={faction.name}
+                  />
+                  <h4 className="text-center my-4">{faction.name}</h4>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="font-LeMurmure text-scarlet text-center text-6xl md:text-7xl">
+              Otros
+            </h2>
+
+            <DividerLogo className="my-8" />
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+              {factionsOthers.map((faction, index) => (
+                <Link key={index} href={`/facciones/${faction.slug}`}>
+                  <HexagonCard
+                    source={faction.avatar}
+                    alternative={faction.name}
+                  />
+                  <h4 className="text-center my-4">{faction.name}</h4>
                 </Link>
               ))}
             </div>
