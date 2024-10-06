@@ -10,7 +10,7 @@ export async function generateMetadata({ params }) {
   const apiSecretKey = process.env.NEXT_PUBLIC_API_SECRET_KEY;
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/characters/${slug}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/species/${slug}`,
     {
       method: "GET",
       headers: {
@@ -23,32 +23,32 @@ export async function generateMetadata({ params }) {
 
   if (!res.ok) {
     return {
-      title: "Información no encontrada",
-      description: "La información solicitada no se pudo encontrar.",
-      url: "https://claudettevamp.com/mitologia/no-encontrado",
+      title: "Especie no encontrada",
+      description: "La especie solicitada no se pudo encontrar.",
+      url: "https://claudettevamp.com/especies/no-encontrado",
       image: "https://claudettevamp.com/no-cover.webp",
-      canonical: "https://claudettevamp.com/mitologia/no-encontrado",
+      canonical: "https://claudettevamp.com/especies/no-encontrado",
     };
   }
 
-  const character = await res.json();
+  const specie = await res.json();
 
   return getMetadata({
-    title: `${character.name} — Claudette Vamp`,
+    title: `${specie.name} — Claudette Vamp`,
     description:
       "Claudette Vamp es una trilogía de novelas cortas de fantasía oscura y romance escritas por Alejandro Mártir.",
-    url: `https://claudettevamp.com/mitologia/${character.slug}`,
-    image: `https://claudettevamp.com${character.avatar}`,
-    canonical: `https://claudettevamp.com/mitologia/${character.slug}`,
+    url: `https://claudettevamp.com/especies/${specie.slug}`,
+    image: `https://claudettevamp.com${specie.avatar}`,
+    canonical: `https://claudettevamp.com/especies/${specie.slug}`,
   });
 }
 
-export default async function MythoPage({ params }) {
+export default async function SpeciePage({ params }) {
   const { slug } = params;
   const apiSecretKey = process.env.NEXT_PUBLIC_API_SECRET_KEY;
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/characters/${slug}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/species/${slug}`,
     {
       method: "GET",
       headers: {
@@ -60,25 +60,61 @@ export default async function MythoPage({ params }) {
   );
 
   if (!res.ok) {
-    return <div>Información no encontrada</div>;
+    return <div>Especie no encontrada</div>;
   }
 
-  const character = await res.json();
+  const specie = await res.json();
 
   return (
     <div>
-      <h1>{character.name}</h1>
+      <h1>{specie.name}</h1>
 
       <section className="grid grid-cols-1 md:grid-cols-12 gap-8">
         <div className="col-span-12 md:col-span-8">
           <h2 className="font-LeMurmure text-scarlet text-6xl md:text-7xl mb-48 md:mb-32">
-            {character.name}
+            {specie.name}
           </h2>
 
-          {character.description &&
-            character.description !== "NULL" &&
-            character.description !== "" && (
-              <div className="mb-12">{formatText(character.description)}</div>
+          {specie.description &&
+            specie.description !== "NULL" &&
+            specie.description !== "" && (
+              <div className="mb-12">{formatText(specie.description)}</div>
+            )}
+
+          <DividerLogo className="py-12" />
+
+          <h3 className="font-LeMurmure text-scarlet text-3xl mb-4">
+            Descripción física
+          </h3>
+
+          {specie.aspect &&
+            specie.aspect !== "NULL" &&
+            specie.aspect !== "" && (
+              <div className="mb-12">{formatText(specie.aspect)}</div>
+            )}
+
+          <DividerLogo className="py-12" />
+
+          <h3 className="font-LeMurmure text-scarlet text-3xl mb-4">
+            Información de origen
+          </h3>
+
+          {specie.origen &&
+            specie.origen !== "NULL" &&
+            specie.origen !== "" && (
+              <div className="mb-12">{formatText(specie.origen)}</div>
+            )}
+
+          <DividerLogo className="py-12" />
+
+          <h3 className="font-LeMurmure text-scarlet text-3xl mb-4">
+            Estructura social
+          </h3>
+
+          {specie.society &&
+            specie.society !== "NULL" &&
+            specie.society !== "" && (
+              <div className="mb-12">{formatText(specie.society)}</div>
             )}
 
           <DividerLogo className="py-12" />
@@ -87,10 +123,10 @@ export default async function MythoPage({ params }) {
             Datos curiosos
           </h3>
 
-          {character.curiosity &&
-            character.curiosity !== "NULL" &&
-            character.curiosity !== "" && (
-              <div>{formatText(character.curiosity)}</div>
+          {specie.curiosity &&
+            specie.curiosity !== "NULL" &&
+            specie.curiosity !== "" && (
+              <div>{formatText(specie.curiosity)}</div>
             )}
         </div>
 
@@ -99,7 +135,7 @@ export default async function MythoPage({ params }) {
           <div className="relative w-full mt-16 md:mt-5">
             <BoxCard className="mt-16 md:mt-5">
               <HexagonCard
-                source={character.avatar}
+                source={specie.avatar}
                 alternative="alejandro-martir"
                 className="mb-5"
               />
@@ -107,70 +143,39 @@ export default async function MythoPage({ params }) {
               <DividerLogo className="py-4" />
 
               <h3 className="font-LeMurmure text-scarlet text-2xl mb-3">
-                {character.name_original}
+                Datos generales
               </h3>
               <ul>
-                {character.name_others &&
-                  character.name_others !== "NULL" &&
-                  character.name_others !== "" && (
+                {specie.lifetime &&
+                  specie.lifetime !== "NULL" &&
+                  specie.lifetime !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Otros nombres:</span>{" "}
-                      {character.name_others}
+                      <span className="font-bold">Esperanza de vida:</span>{" "}
+                      {specie.lifetime}
                     </li>
                   )}
-                {character.birth &&
-                  character.birth !== "NULL" &&
-                  character.birth !== "" && (
+                  {specie.specs &&
+                  specie.specs !== "NULL" &&
+                  specie.specs !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Nacimiento:</span>{" "}
-                      {character.birth}
+                      <span className="font-bold">Características:</span>{" "}
+                      {specie.specs}
                     </li>
                   )}
-                {character.death &&
-                  character.death !== "NULL" &&
-                  character.death !== "" && (
+                  {specie.skills &&
+                  specie.skills !== "NULL" &&
+                  specie.skills !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Muerte:</span>{" "}
-                      {character.death}
+                      <span className="font-bold">Habilidades:</span>{" "}
+                      {specie.skills}
                     </li>
                   )}
-                {character.family &&
-                  character.family !== "NULL" &&
-                  character.family !== "" && (
+                  {specie.debility &&
+                  specie.debility !== "NULL" &&
+                  specie.debility !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Familiares:</span>{" "}
-                      {character.family}
-                    </li>
-                  )}
-                {character.clan &&
-                  character.clan !== "NULL" &&
-                  character.clan !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Clan:</span> {character.clan}
-                    </li>
-                  )}
-                {character.affiliations &&
-                  character.affiliations !== "NULL" &&
-                  character.affiliations !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Afiliaciones:</span>{" "}
-                      {character.affiliations}
-                    </li>
-                  )}
-                {character.relationship &&
-                  character.relationship !== "NULL" &&
-                  character.relationship !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Estado civil:</span>{" "}
-                      {character.relationship}
-                    </li>
-                  )}
-                {character.couple &&
-                  character.couple !== "NULL" &&
-                  character.couple !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Pareja:</span>{" "}
-                      {character.couple}
+                      <span className="font-bold">Debilidades:</span>{" "}
+                      {specie.debility}
                     </li>
                   )}
               </ul>
@@ -178,93 +183,55 @@ export default async function MythoPage({ params }) {
               <DividerLogo className="py-4" />
 
               <h3 className="font-LeMurmure text-scarlet text-2xl mb-3">
-                Información descriptiva
+                Datos físicos
               </h3>
               <ul>
-                {character.species &&
-                  character.species !== "NULL" &&
-                  character.species !== "" && (
+                {specie.gender &&
+                  specie.gender !== "NULL" &&
+                  specie.gender !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Especie:</span>{" "}
-                      {character.species}
+                      <span className="font-bold">Géneros:</span>{" "}
+                      {specie.gender}
                     </li>
                   )}
-                {character.gender &&
-                  character.gender !== "NULL" &&
-                  character.gender !== "" && (
+                  {specie.stature &&
+                  specie.stature !== "NULL" &&
+                  specie.stature !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Género:</span>{" "}
-                      {character.gender}
+                      <span className="font-bold">Altura:</span>{" "}
+                      {specie.stature}
                     </li>
                   )}
-                {character.stature &&
-                  character.stature !== "NULL" &&
-                  character.stature !== "" && (
+                  {specie.eyes &&
+                  specie.eyes !== "NULL" &&
+                  specie.eyes !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Estatura:</span>{" "}
-                      {character.stature}
+                      <span className="font-bold">Color de ojos:</span>{" "}
+                      {specie.eyes}
                     </li>
                   )}
-                {character.weight &&
-                  character.weight !== "NULL" &&
-                  character.weight !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Peso:</span>{" "}
-                      {character.weight}
-                    </li>
-                  )}
-                {character.eyes &&
-                  character.eyes !== "NULL" &&
-                  character.eyes !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Ojos:</span> {character.eyes}
-                    </li>
-                  )}
-                {character.hair &&
-                  character.hair !== "NULL" &&
-                  character.hair !== "" && (
+                  {specie.hair &&
+                  specie.hair !== "NULL" &&
+                  specie.hair !== "" && (
                     <li className="mb-2">
                       <span className="font-bold">Cabello:</span>{" "}
-                      {character.hair}
+                      {specie.hair}
                     </li>
                   )}
-                {character.skin &&
-                  character.skin !== "NULL" &&
-                  character.skin !== "" && (
+                  {specie.skin &&
+                  specie.skin !== "NULL" &&
+                  specie.skin !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Tez:</span> {character.skin}
+                      <span className="font-bold">Tez:</span>{" "}
+                      {specie.skin}
                     </li>
                   )}
-              </ul>
-
-              <DividerLogo className="py-4" />
-
-              <h3 className="font-LeMurmure text-scarlet text-2xl mb-3">
-                Otros datos
-              </h3>
-              <ul>
-                {character.occupation &&
-                  character.occupation !== "NULL" &&
-                  character.occupation !== "" && (
+                  {specie.complexion &&
+                  specie.complexion !== "NULL" &&
+                  specie.complexion !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Ocupación:</span>{" "}
-                      {character.occupation}
-                    </li>
-                  )}
-                {character.weapon &&
-                  character.weapon !== "NULL" &&
-                  character.weapon !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Armamento:</span>{" "}
-                      {character.weapon}
-                    </li>
-                  )}
-                {character.appearance &&
-                  character.appearance !== "NULL" &&
-                  character.appearance !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Primera aparición:</span>{" "}
-                      {character.appearance}
+                      <span className="font-bold">Complexión:</span>{" "}
+                      {specie.complexion}
                     </li>
                   )}
               </ul>
