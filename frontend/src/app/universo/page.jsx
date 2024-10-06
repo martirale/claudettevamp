@@ -99,7 +99,7 @@ export default function Universe() {
             <span className="font-medium">Caída y Ascenso.</span> Las dos
             primeras partes se encuentran ya{" "}
             <Link
-              href="https://www.amazon.com/dp/B0BNZMWXYT"
+              href="https://www.amazon.com/dp/B0DJH23M5P"
               target="_blank"
               rel="noopener"
               className="text-scarlet hover:underline"
