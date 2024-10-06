@@ -5,6 +5,7 @@ const db = require("./config/db");
 const bookRoutes = require("./routes/books");
 const characterRoutes = require("./routes/characters");
 const speciesRoutes = require("./routes/species");
+const factionsRoutes = require("./routes/factions");
 const verifyApiKey = require("./middlewares/auth");
 
 app.use(express.json());
@@ -31,6 +32,7 @@ db.getConnection((err, connection) => {
 app.use("/books", verifyApiKey, bookRoutes);
 app.use("/characters", verifyApiKey, characterRoutes);
 app.use("/species", verifyApiKey, speciesRoutes);
+app.use("/factions", verifyApiKey, factionsRoutes);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
