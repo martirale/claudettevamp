@@ -107,16 +107,9 @@ export default async function FactionPage({ params }) {
               <DividerLogo className="py-4" />
 
               <h3 className="font-LeMurmure text-scarlet text-2xl mb-3">
-                Datos generales
+                {faction.name}
               </h3>
               <ul>
-                {faction.name &&
-                  faction.name !== "NULL" &&
-                  faction.name !== "" && (
-                    <li className="mb-2">
-                      <span className="font-bold">Nombre:</span> {faction.name}
-                    </li>
-                  )}
                 {faction.leader &&
                   faction.leader !== "NULL" &&
                   faction.leader !== "" && (
