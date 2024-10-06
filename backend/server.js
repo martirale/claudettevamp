@@ -4,6 +4,7 @@ const port = 3010;
 const db = require("./config/db");
 const bookRoutes = require("./routes/books");
 const characterRoutes = require("./routes/characters");
+const speciesRoutes = require("./routes/species");
 const verifyApiKey = require("./middlewares/auth");
 
 app.use(express.json());
@@ -29,6 +30,7 @@ db.getConnection((err, connection) => {
 // Usa el middleware para proteger las rutas
 app.use("/books", verifyApiKey, bookRoutes);
 app.use("/characters", verifyApiKey, characterRoutes);
+app.use("/species", verifyApiKey, speciesRoutes);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
