@@ -84,7 +84,7 @@ export default async function CharacterPage({ params }) {
           <DividerLogo className="py-12" />
 
           <h3 className="font-LeMurmure text-scarlet text-3xl mb-4">
-            Datos curiosos
+            Otros datos y curiosidades
           </h3>
 
           {character.curiosity &&

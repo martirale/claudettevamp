@@ -120,7 +120,7 @@ export default async function SpeciePage({ params }) {
           <DividerLogo className="py-12" />
 
           <h3 className="font-LeMurmure text-scarlet text-3xl mb-4">
-            Datos curiosos
+            Otros datos y curiosidades
           </h3>
 
           {specie.curiosity &&
@@ -154,7 +154,7 @@ export default async function SpeciePage({ params }) {
                       {specie.lifetime}
                     </li>
                   )}
-                  {specie.specs &&
+                {specie.specs &&
                   specie.specs !== "NULL" &&
                   specie.specs !== "" && (
                     <li className="mb-2">
@@ -162,7 +162,7 @@ export default async function SpeciePage({ params }) {
                       {specie.specs}
                     </li>
                   )}
-                  {specie.skills &&
+                {specie.skills &&
                   specie.skills !== "NULL" &&
                   specie.skills !== "" && (
                     <li className="mb-2">
@@ -170,7 +170,7 @@ export default async function SpeciePage({ params }) {
                       {specie.skills}
                     </li>
                   )}
-                  {specie.debility &&
+                {specie.debility &&
                   specie.debility !== "NULL" &&
                   specie.debility !== "" && (
                     <li className="mb-2">
@@ -194,7 +194,7 @@ export default async function SpeciePage({ params }) {
                       {specie.gender}
                     </li>
                   )}
-                  {specie.stature &&
+                {specie.stature &&
                   specie.stature !== "NULL" &&
                   specie.stature !== "" && (
                     <li className="mb-2">
@@ -202,7 +202,7 @@ export default async function SpeciePage({ params }) {
                       {specie.stature}
                     </li>
                   )}
-                  {specie.eyes &&
+                {specie.eyes &&
                   specie.eyes !== "NULL" &&
                   specie.eyes !== "" && (
                     <li className="mb-2">
@@ -210,23 +210,21 @@ export default async function SpeciePage({ params }) {
                       {specie.eyes}
                     </li>
                   )}
-                  {specie.hair &&
+                {specie.hair &&
                   specie.hair !== "NULL" &&
                   specie.hair !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Cabello:</span>{" "}
-                      {specie.hair}
+                      <span className="font-bold">Cabello:</span> {specie.hair}
                     </li>
                   )}
-                  {specie.skin &&
+                {specie.skin &&
                   specie.skin !== "NULL" &&
                   specie.skin !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Tez:</span>{" "}
-                      {specie.skin}
+                      <span className="font-bold">Tez:</span> {specie.skin}
                     </li>
                   )}
-                  {specie.complexion &&
+                {specie.complexion &&
                   specie.complexion !== "NULL" &&
                   specie.complexion !== "" && (
                     <li className="mb-2">
