@@ -63,11 +63,16 @@ const buttons = [
   },
   {
     id: "4",
+    title: "Personajes",
+    url: "/personajes",
+  },
+  {
+    id: "5",
     title: "Facciones",
     url: "/facciones",
   },
   {
-    id: "5",
+    id: "6",
     title: "Especies",
     url: "/especies",
   },
