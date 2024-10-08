@@ -156,7 +156,9 @@ export default function Universe() {
                   href={button.url}
                   className="px-2 py-4 border border-darkGrey transition-colors hover:border-scarlet flex items-center justify-center"
                 >
-                  <span className="font-LeMurmure text-xl uppercase">{button.title}</span>
+                  <span className="font-LeMurmure text-2xl uppercase">
+                    {button.title}
+                  </span>
                 </Link>
               ) : null
             )}
