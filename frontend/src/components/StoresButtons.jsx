@@ -16,7 +16,7 @@ const stores = [
     image: "/stores/apple-books.svg",
     width: "150",
     height: "44",
-    url: "https://books.apple.com/us/book-series/caída-y-ascenso/id1701697487",
+    url: "https://books.apple.com/us/book-series/id1701697487",
     target: "_blank",
   },
   {
