@@ -53,18 +53,18 @@ const buttons = [
   },
   {
     id: "2",
+    title: "Personajes",
+    url: "/personajes",
+  },
+  {
+    id: "3",
     title: "Protagonistas",
     url: "/protagonistas",
   },
   {
-    id: "3",
+    id: "4",
     title: "Antagonistas",
     url: "/antagonistas",
-  },
-  {
-    id: "4",
-    title: "Personajes",
-    url: "/personajes",
   },
   {
     id: "5",
