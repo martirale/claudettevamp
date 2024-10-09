@@ -83,7 +83,7 @@ export default async function SpeciePage({ params }) {
 
           <DividerLogo className="py-12" />
 
-          <h3 className="font-LeMurmure text-scarlet text-3xl mb-4">
+          <h3 className="font-LeMurmure text-scarlet text-3xl md:text-4xl mb-4">
             Descripción física
           </h3>
 
@@ -95,7 +95,7 @@ export default async function SpeciePage({ params }) {
 
           <DividerLogo className="py-12" />
 
-          <h3 className="font-LeMurmure text-scarlet text-3xl mb-4">
+          <h3 className="font-LeMurmure text-scarlet text-3xl md:text-4xl mb-4">
             Información de origen
           </h3>
 
@@ -107,7 +107,7 @@ export default async function SpeciePage({ params }) {
 
           <DividerLogo className="py-12" />
 
-          <h3 className="font-LeMurmure text-scarlet text-3xl mb-4">
+          <h3 className="font-LeMurmure text-scarlet text-3xl md:text-4xl mb-4">
             Estructura social
           </h3>
 
@@ -119,7 +119,7 @@ export default async function SpeciePage({ params }) {
 
           <DividerLogo className="py-12" />
 
-          <h3 className="font-LeMurmure text-scarlet text-3xl mb-4">
+          <h3 className="font-LeMurmure text-scarlet text-3xl md:text-4xl mb-4">
             Otros datos y curiosidades
           </h3>
 
