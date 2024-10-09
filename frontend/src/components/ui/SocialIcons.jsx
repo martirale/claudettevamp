@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
   faFacebookF,
-  faSpotify,
   faThreads,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
@@ -40,12 +39,6 @@ export default function SocialIcons({ className = "w-6 h-6" }) {
         href="https://www.facebook.com/claudettevamp"
         icon={faFacebookF}
         label="Facebook"
-        className={className}
-      />
-      <SocialIcon
-        href="https://open.spotify.com/artist/7sYIWPBUhdqqSMgCKCd8LU"
-        icon={faSpotify}
-        label="Spotify"
         className={className}
       />
     </div>
