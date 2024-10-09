@@ -129,19 +129,26 @@ export default function Universe() {
             Claudette Vamp actualmente está conformado por una{" "}
             <span className="font-medium">novela principal</span> (compuesta por
             tres novelas cortas) llamada{" "}
-            <span className="font-medium">Caída y Ascenso.</span> Las dos
-            primeras partes se encuentran ya{" "}
+            <span className="font-medium">Caída y Ascenso.</span> Actualmente
+            las tres partes se encuentran ya disponibles en{" "}
             <Link
               href="https://www.amazon.com/dp/B0DJH23M5P"
               target="_blank"
               rel="noopener"
               className="text-scarlet hover:underline"
             >
-              disponibles en Amazon
+              Amazon
+            </Link>{" "}
+            y{" "}
+            <Link
+              href="https://books.apple.com/us/book-series/id1701697487"
+              target="_blank"
+              rel="noopener"
+              className="text-scarlet hover:underline"
+            >
+              Apple Books
             </Link>
-            , mientras que la tercera parte está programada para publicarse a
-            finales de octubre 2024. Así mismo, Claudette Vamp está también
-            conformado por una{" "}
+            . Así mismo, Claudette Vamp está también conformado por una{" "}
             <Link
               href="https://www.amazon.com/dp/B0CLKVY5FW"
               target="_blank"
@@ -153,6 +160,7 @@ export default function Universe() {
             que expanden el universo.
           </p>
 
+          {/* UNIVERSE SECTIONS */}
           <div className="grid text-center gap-4 md:grid-cols-3 mt-12">
             {buttons.map((button) =>
               button.url ? (
@@ -168,6 +176,35 @@ export default function Universe() {
               ) : null
             )}
           </div>
+
+          <DividerLogo className="py-12" />
+
+          {/* TEMPORALITY */}
+          <h2 className="font-LeMurmure text-scarlet text-3xl md:text-4xl mb-4">
+            Cronología
+          </h2>
+
+          <p className="mb-8">
+            En la cronología de Claudette Vamp se toma como referencia y punto
+            de inicio la reencarnación de Maral Schwan (protagonista de la
+            historia). Por lo tanto{" "}
+            <span className="font-medium italic">a. r.</span> se refiere a antes
+            de la reencarnación y{" "}
+            <span className="font-medium italic">d. r.</span> se refiere a
+            después de la reencarnación. De esta forma, todos los
+            acontecimientos principales y secundarios ocurridos previo a la
+            reencarnación serán denominados y contados como{" "}
+            <span className="font-medium italic">X a. r.</span> De igual forma,
+            los eventos posteriores a la reencarnación serán denominados y
+            contados como <span className="font-medium italic">X d. r.</span>
+          </p>
+
+          <p className="font-medium">
+            Los eventos que suceden en el año de la reencarnación se denominan
+            Año Cero. La historia principal (Claudette, caída y ascenso) así
+            como las historias derivadas (Claudette Vamp: Relatos) se ubican en
+            el siglo <span className="small-caps">xxi</span> d. C.
+          </p>
         </div>
 
         {/* SIDEBAR */}
