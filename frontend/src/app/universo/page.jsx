@@ -98,39 +98,12 @@ export default function Universe() {
             </Link>
           </p>
 
-          <p className="mb-8">
-            En este universo Maral Schwan, fue uno de los vampiros más poderosos
-            del mundo y quien lideró la revuelta más grande en el mundo
-            sobrenatural. Tras perder la guerra se vio forzado a servir al poder
-            que juró derrocar dando fin al conflicto. En este oscuro destino
-            conoció a Claudia Bellerose, una enigmática y joven Nephilim por la
-            que su corazón por primera vez sintió algo en más de un siglo. Sin
-            embargo, su amor está destinado a la tragedia cuando una serie de
-            eventos desgarradores los lleva a la muerte. Maral, ahora
-            reencarnado y conocido con el nombre de Claudette, emprendió un
-            viaje a través de las edades persiguiendo su venganza. En su
-            búsqueda por liberarse de las cadenas de su pasado, se desataron una
-            serie de acontecimientos que cambiarán el curso de la historia y lo
-            enfrentarán a la posibilidad de redimirse y encontrar la paz que
-            tanto anhela.
-          </p>
-
-          <p className="mb-8">
-            En este universo además de existir seres humanos (conocidos como{" "}
-            <span className="italic">mortales</span>), también existen otro tipo
-            de criaturas oscuras o seres sobrenaturales como: vampiros,
-            licántropos, brujos y Nephilim. Estas criaturas están basadas en una
-            combinación de creencias mitológicas originadas en el
-            judeocristianismo así como diversos mitos folklóricos principalmente
-            del este europeo.
-          </p>
-
           <p>
-            Claudette Vamp actualmente está conformado por una{" "}
-            <span className="font-medium">novela principal</span> (compuesta por
-            tres novelas cortas) llamada{" "}
-            <span className="font-medium">Caída y Ascenso.</span> Actualmente
-            las tres partes se encuentran ya disponibles en{" "}
+            Claudette Vamp está conformado por{" "}
+            <span className="font-medium">una novela principal</span> (compuesta
+            por tres novelas cortas) llamada{" "}
+            <span className="font-medium">Claudette, caída y ascenso.</span>{" "}
+            Actualmente las tres partes se encuentran ya disponibles en{" "}
             <Link
               href="https://www.amazon.com/dp/B0DJH23M5P"
               target="_blank"
@@ -148,7 +121,7 @@ export default function Universe() {
             >
               Apple Books
             </Link>
-            . Así mismo, Claudette Vamp está también conformado por una{" "}
+            . Así mismo, también está conformado por una{" "}
             <Link
               href="https://www.amazon.com/dp/B0CLKVY5FW"
               target="_blank"
@@ -176,6 +149,40 @@ export default function Universe() {
               ) : null
             )}
           </div>
+
+          <DividerLogo className="py-12" />
+
+          {/* GENERAL */}
+          <h2 className="font-LeMurmure text-scarlet text-3xl md:text-4xl mb-4">
+            Datos generales
+          </h2>
+
+          <p className="mb-8">
+            En este universo, Maral Schwan fue uno de los vampiros más poderosos
+            del mundo y quien lideró la revuelta más grande en el mundo
+            sobrenatural. Tras perder la guerra se vio forzado a servir al poder
+            que juró derrocar dando fin al conflicto. En este oscuro destino
+            conoció a Claudia Bellerose, una enigmática y joven Nephilim por la
+            que su corazón por primera vez sintió algo en más de un siglo. Sin
+            embargo, su amor está destinado a la tragedia cuando una serie de
+            eventos desgarradores los lleva a la muerte. Maral, ahora
+            reencarnado y conocido con el nombre de Claudette, emprendió un
+            viaje a través de las edades persiguiendo su venganza. En su
+            búsqueda por liberarse de las cadenas de su pasado, se desataron una
+            serie de acontecimientos que cambiarán el curso de la historia y lo
+            enfrentarán a la posibilidad de redimirse y encontrar la paz que
+            tanto anhela.
+          </p>
+
+          <p className="mb-8">
+            En este universo además de existir seres humanos (conocidos como{" "}
+            <span className="italic">mortales</span>), también existen otro tipo
+            de criaturas oscuras o seres sobrenaturales como: vampiros,
+            licántropos, brujos y Nephilim. Estas criaturas están basadas en una
+            combinación de creencias mitológicas originadas en el
+            judeocristianismo así como diversos mitos folklóricos principalmente
+            del este europeo.
+          </p>
 
           <DividerLogo className="py-12" />
 
