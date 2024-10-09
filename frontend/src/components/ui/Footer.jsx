@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LogoClaudette from "../LogoClaudette";
+import SocialIcons from "./SocialIcons";
 
 export default function Footer() {
   return (
@@ -11,6 +12,11 @@ export default function Footer() {
             <LogoClaudette className="fill-scarlet w-[194px] h-[72px] md:w-[256px] md:h-[95px] 2xl:w-[300px] 2xl:h-[111px]" />
           </div>
           <div className="flex-grow h-px bg-scarlet"></div>
+        </div>
+
+        <div className="flex flex-col items-center justify-center my-16 text-center">
+          <p className="pb-8 text-lg">¡Sigue a Claudette!</p>
+          <SocialIcons className="w-12 h-12" />
         </div>
 
         <div className="mt-8 text-center">
