@@ -36,7 +36,7 @@ const Header = () => {
     const midPoint = Math.ceil(menuItems.length / 2);
     return (
       <>
-        <div className="font-LeMurmure text-2xl flex-1 flex justify-end space-x-16 uppercase">
+        <div className="font-LeMurmure text-3xl flex-1 flex justify-end space-x-16 uppercase">
           {menuItems.slice(0, midPoint).map((item, index) => (
             <Link
               key={index}
@@ -52,7 +52,7 @@ const Header = () => {
             <MonogramClaudette className="fill-scarlet w-[51px] h-[72px]" />
           </Link>
         </div>
-        <div className="font-LeMurmure text-2xl flex-1 flex justify-start space-x-16 uppercase">
+        <div className="font-LeMurmure text-3xl flex-1 flex justify-start space-x-16 uppercase">
           {menuItems.slice(midPoint).map((item, index) => (
             <Link
               key={index}
