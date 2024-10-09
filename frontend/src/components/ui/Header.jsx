@@ -113,7 +113,7 @@ const Header = () => {
             <Link
               key={index}
               href={item.href}
-              className="font-LeMurmure text-2xl block px-4 py-2 text-white uppercase"
+              className="font-LeMurmure text-3xl block px-4 py-2 text-white uppercase"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
