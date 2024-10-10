@@ -29,8 +29,8 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             cd ${{ secrets.PROJECT_PATH }}/frontend
-            npm install
-            npm run build
+            pnpm install
+            pnpm run build
             pm2 restart claudette-frontend
           EOF
 
@@ -38,6 +38,6 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             cd ${{ secrets.PROJECT_PATH }}/backend
-            npm install
+            pnpm install
             pm2 restart claudette-backend
           EOF
