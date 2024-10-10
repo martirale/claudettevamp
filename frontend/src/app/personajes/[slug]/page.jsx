@@ -146,7 +146,8 @@ export default async function CharacterPage({ params }) {
                   character.clan !== "NULL" &&
                   character.clan !== "" && (
                     <li className="mb-2">
-                      <span className="font-bold">Clan:</span> {character.clan}
+                      <span className="font-bold">Linaje:</span>{" "}
+                      {character.clan}
                     </li>
                   )}
                 {character.affiliations &&
